@@ -318,30 +318,32 @@ $(document).ready(function(){
 
 	//uload zone
 	var uploadForm = $('.s_services__form');
-	uploadForm.dropzone({
-		url: "/",
-		maxFiles: 1,
-		previewsContainer: uploadForm.find('.g_upload__info')[0],
-		previewTemplate: '<div class="g_upload__item"><div class="g_upload__item_name" data-dz-name></div><small data-dz-size></small><span class="g_upload__item_progress" data-dz-uploadprogress></span><i data-dz-remove>&times;</i></div>',
-		maxFilesize: 25, // MB
-		clickable: uploadForm.find('.g_upload')[0],
-//		acceptedFiles: '.jpeg,.jpg,.png,.bmp,.svg,.pdf,.doc,.docx,.psd',
-		init: function() {
-			this.on("maxfilesexceeded", function(file) {
-				this.removeAllFiles();
-				this.addFile(file);
-			});
-			this.on("addedfile", function() {
-				if (this.files[1]!=null){
-					this.removeFile(this.files[0]);
-				}
-				uploadForm.find('.g_upload__btn').addClass('_hidden');
-			});
-			this.on("removedfile", function() {
-				uploadForm.find('.g_upload__btn').removeClass('_hidden');
-			});
-		}
-	});
+	if(uploadForm.length){
+		uploadForm.dropzone({
+			url: "/",
+			maxFiles: 1,
+			previewsContainer: uploadForm.find('.g_upload__info')[0],
+			previewTemplate: '<div class="g_upload__item"><div class="g_upload__item_name" data-dz-name></div><small data-dz-size></small><span class="g_upload__item_progress" data-dz-uploadprogress></span><i data-dz-remove>&times;</i></div>',
+			maxFilesize: 25, // MB
+			clickable: uploadForm.find('.g_upload')[0],
+			//		acceptedFiles: '.jpeg,.jpg,.png,.bmp,.svg,.pdf,.doc,.docx,.psd',
+			init: function() {
+				this.on("maxfilesexceeded", function(file) {
+					this.removeAllFiles();
+					this.addFile(file);
+				});
+				this.on("addedfile", function() {
+					if (this.files[1]!=null){
+						this.removeFile(this.files[0]);
+					}
+					uploadForm.find('.g_upload__btn').addClass('_hidden');
+				});
+				this.on("removedfile", function() {
+					uploadForm.find('.g_upload__btn').removeClass('_hidden');
+				});
+			}
+		});
+	}
 
 	//header search
 	$('.header__search_btn').click(function(e){
