@@ -1,0 +1,637 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="ru"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="ru"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="ru"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>LEDEK</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="vendor/swiper/css/swiper.min.css">
+		<link rel="stylesheet" href="vendor/dropzone/basic.css">
+        <link rel="stylesheet" href="vendor/lightgallery/css/lightgallery.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите ваш браузер</a></p>
+        <![endif]-->
+
+        <div class="g_preloader">
+			<div class="fancy-bulb" style="transform: translateY(55px) rotate(-180deg)">
+				<div class="left-streaks streaks"></div>
+				<svg xmlns="http://www.w3.org/2000/svg" width="71" viewBox="0 0 105.05 157.95">
+					<g id="off">
+						<path class="cls-1" d="M55,129.55a51,51,0,0,0-51,51c0,23.29,29.09,47.23,31.93,64.85h38.2C77,227.85,106,203.91,106,180.58A51.06,51.06,0,0,0,55,129.55Z" transform="translate(-2.5 -128.05)"/>
+					</g>
+					<g id="on">
+						<path class="cls-2" d="M55,129.55a51,51,0,0,0-51,51c0,23.29,29.09,47.23,31.93,64.85h38.2C77,227.85,106,203.91,106,180.58A51.06,51.06,0,0,0,55,129.55Z" transform="translate(-2.5 -128.05)"/>
+					</g>
+					<g id="outline">
+						<path class="cls-3" d="M67.33,274.12H42.67a6.39,6.39,0,0,1-6.39-6.39v-22.3H73.76v22.3A6.42,6.42,0,0,1,67.33,274.12Z" transform="translate(-2.5 -128.05)"/>
+						<path class="cls-3" d="M60.41,284.51H49.59a2.81,2.81,0,0,1-2.8-2.8v-7.59H63.21v7.59A2.78,2.78,0,0,1,60.41,284.51Z" transform="translate(-2.5 -128.05)"/>
+						<line stroke-width="3" stroke="#333" x1="71.26" y1="131.72" x2="33.78" y2="131.72"/>
+						<path class="cls-4" d="M55,129.55a51,51,0,0,0-51,51c0,23.29,29.09,47.23,31.93,64.85h38.2C77,227.85,106,203.91,106,180.58A51.06,51.06,0,0,0,55,129.55Z" transform="translate(-2.5 -128.05)"/>
+					</g>
+					<g id="highlight">
+						<path class="cls-5" d="M82.75,159.84A50.79,50.79,0,0,0,64,144.74" transform="translate(-2.5 -128.05)"/>
+						<path class="cls-5" d="M89.9,172.59c-.32-.88-.72-1.76-1.08-2.6" transform="translate(-2.5 -128.05)"/>
+					</g>
+					<path class="cls-4" id="preload" d="M 21.5 57.7 L 28.5 57.45 L 36.03 56.69 L 39.5 64.95 L 47.75 39.2 L 56.75 78.6 L 63.5 41.94 L 75.75 58.9 L 84 55.61"/>
+				</svg>
+				<div class="right-streaks streaks"></div>
+			</div>
+        </div>
+
+		<header class="header">
+			<div class="container">
+				<div class="header__body">
+					<a href="#" class="header__logo"><span><img src="images/logo.png" alt=""></span><i><img src="images/logo.png" alt=""></i></a>
+					<nav class="header__nav">
+						<a href="#"><span>Каталог</span></a>
+						<a href="#"><span>Портфолио</span></a>
+						<a href="#"><span>Решения для различных сфер</span></a>
+						<a href="#"><span>Технологии и дизайн</span></a>
+						<a href="#"><span>Сервис</span></a>
+						<a href="#"><span>Блог экспертов</span></a>
+						<a href="#"><span>О компании</span></a>
+						<a href="#"><span>Контакты</span></a>
+					</nav>
+					<a href="tel:88633090401" class="header__phone"><span>8 863 309 04 01</span></a>
+					<a href="#" class="header__search_btn"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="20"><path d="M18.7 18.2L14 13.3C15.2 11.8 15.9 10 15.9 8.1 15.9 3.6 12.3 0 7.9 0 3.6 0 0 3.6 0 8.1 0 12.5 3.6 16.1 7.9 16.1 9.6 16.1 11.2 15.6 12.5 14.7L17.2 19.7C17.4 19.9 17.7 20 18 20 18.2 20 18.5 19.9 18.7 19.7 19.1 19.3 19.1 18.6 18.7 18.2ZM7.9 2.1C11.2 2.1 13.8 4.8 13.8 8.1 13.8 11.4 11.2 14 7.9 14 4.7 14 2.1 11.4 2.1 8.1 2.1 4.8 4.7 2.1 7.9 2.1Z" fill="rgb(255, 255, 255)"/></svg></a>
+					<form class="header__search" action="/">
+						<div class="container">
+							<div class="header__search_body">
+								<div class="g_input">
+									<input type="text" name="search">
+									<svg class="g_input__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_input__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg>
+								</div>
+								<button type="submit"><span><svg xmlns="http://www.w3.org/2000/svg" width="22" viewBox="0 0 19 20"><path d="M18.7 18.2L14 13.3C15.2 11.8 15.9 10 15.9 8.1 15.9 3.6 12.3 0 7.9 0 3.6 0 0 3.6 0 8.1 0 12.5 3.6 16.1 7.9 16.1 9.6 16.1 11.2 15.6 12.5 14.7L17.2 19.5C17.4 19.9 17.7 20 18 20 18.2 20 18.5 19.9 18.7 19.7 19.1 19.3 19.1 18.6 18.7 18.2ZM7.9 2.1C11.2 2.1 13.8 4.8 13.8 8.1 13.8 11.4 11.2 14 7.9 14 4.7 14 2.1 11.4 2.1 8.1 2.1 4.8 4.7 2.1 7.9 2.1Z" fill="rgb(255, 255, 255)"/></svg></span></button>
+								<div class="header__search_close"><svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 48 48"><path d="M28.2 24L47.1 5.1c1.2-1.2 1.2-3.1 0-4.2 -1.2-1.2-3.1-1.2-4.2 0L24 19.7 5.1 0.9c-1.2-1.2-3.1-1.2-4.2 0 -1.2 1.2-1.2 3.1 0 4.2l18.9 18.9L0.9 42.9c-1.2 1.2-1.2 3.1 0 4.2C1.5 47.7 2.2 48 3 48s1.5-0.3 2.1-0.9l18.9-18.9L42.9 47.1c0.6 0.6 1.4 0.9 2.1 0.9s1.5-0.3 2.1-0.9c1.2-1.2 1.2-3.1 0-4.2L28.2 24z"/></svg></div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<svg class="header__animation" xmlns="http://www.w3.org/2000/svg" width="1920" height="65" viewBox="0 0 1920 60" preserveAspectRatio="none"><path class="header__animation_path" d="M -0.5 0.5 L -0.5 42.5 C 319.75 42.5 640 42.5 960.25 42.5 C 1280.5 42.5 1600.75 42.5 1921 42.5 L 1919.5 0.5"/></svg>
+		</header>
+      	<section class="s_main">
+      		<div class="container">
+      			<div class="s_main__body">
+      				<div class="s_main__txt">
+						<h1>Светодиодные светильники LEDEK <span> <br>с безусловной гарантией 5 лет</span></h1>
+						<p>Инновации и качество в каждой детали</p>
+						<a href="#" class="g_btn"><span>смотреть каталог</span><svg class="g_btn__svg" viewBox="0 0 220 53.5" preserveAspectRatio="none"><path filter="url(#Filter_0)" class="g_btn__path" transform="translate(0 0)" d="M 12 6.25 C 44.5 6.25 77 6.25 109.5 6.25 C 142 6.25 174.5 6.25 207 6.25 C 210.866 6.25 214 9.384 214 13.25 L 214 27.25 C 213.91 32.25 213.91 32.25 214 41.25 C 214 45.116 210.866 48.25 207 48.25 C 174.5 48.25 142 48.25 109.5 48.25 C 77 48.25 44.5 48.25 12 48.25 C 8.134 48.25 5 45.116 5 41.25 C 5 35 5.05 31.71 5 26.75 C 4.95 21.79 5 18.25 5 13.25 C 5 9.384 8.134 6.25 12 6.25 Z"></path></svg></a>
+      				</div>
+      				<div class="s_main__img">
+      					<img src="images/main.png" alt="">
+      				</div>
+      			</div>
+      		</div>
+      	</section>
+      	<section class="s_slider">
+      		<div class="container">
+      			<div class="s_slider__slider_wrp swiper-container">
+      				<div class="s_slider__slider swiper-wrapper">
+      					<div class="s_slider__item swiper-slide">
+      						<div class="s_slider__img"><img src="images/slider/1.png" alt=""></div>
+							<div class="s_slider__txt">
+								<h2 class="g_title">Промышленный светодиодный светильник</h2>
+								<div class="s_slider__controls">
+									<a class="s_slider__controls_link g_link" href="#"><span>Подобрать светильник</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></a>
+									<div class="s_slider__arr g_arr">
+										<div class="s_slider__arr_prev"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="15"><path d="M1.6 7.6L7.6 14.3 6.8 15 0.9 8.4 0.8 8.5 0 7.8 7.2 0 8 0.6 1.6 7.6Z" fill="rgb(24, 117, 204)"/></svg></div>
+										<div class="s_slider__arr_next"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="16"><path d="M7.6 9.3L7.5 9.2 1.8 16 1 15.3 6.8 8.4 0.6 1.3 1.4 0.7 8.4 8.7 7.6 9.3Z" fill="rgb(24, 117, 204)"/></svg></div>
+									</div>
+								</div>
+							</div>
+      					</div>
+						<div class="s_slider__item swiper-slide">
+							<div class="s_slider__img"><img src="images/slider/1.png" alt=""></div>
+							<div class="s_slider__txt">
+								<h2 class="g_title">Lorem ipsum dolor sit amet, consectetur.</h2>
+								<div class="s_slider__controls">
+									<a class="s_slider__controls_link g_link" href="#"><span>Подобрать светильник</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></a>
+									<div class="s_slider__arr g_arr">
+										<div class="s_slider__arr_prev"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="15"><path d="M1.6 7.6L7.6 14.3 6.8 15 0.9 8.4 0.8 8.5 0 7.8 7.2 0 8 0.6 1.6 7.6Z" fill="rgb(24, 117, 204)"/></svg></div>
+										<div class="s_slider__arr_next"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="16"><path d="M7.6 9.3L7.5 9.2 1.8 16 1 15.3 6.8 8.4 0.6 1.3 1.4 0.7 8.4 8.7 7.6 9.3Z" fill="rgb(24, 117, 204)"/></svg></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="s_slider__item swiper-slide">
+							<div class="s_slider__img"><img src="images/slider/1.png" alt=""></div>
+							<div class="s_slider__txt">
+								<h2 class="g_title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ducimus.</h2>
+								<div class="s_slider__controls">
+									<a class="s_slider__controls_link g_link" href="#"><span>Подобрать светильник</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></a>
+									<div class="s_slider__arr g_arr">
+										<div class="s_slider__arr_prev"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="15"><path d="M1.6 7.6L7.6 14.3 6.8 15 0.9 8.4 0.8 8.5 0 7.8 7.2 0 8 0.6 1.6 7.6Z" fill="rgb(24, 117, 204)"/></svg></div>
+										<div class="s_slider__arr_next"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="16"><path d="M7.6 9.3L7.5 9.2 1.8 16 1 15.3 6.8 8.4 0.6 1.3 1.4 0.7 8.4 8.7 7.6 9.3Z" fill="rgb(24, 117, 204)"/></svg></div>
+									</div>
+								</div>
+							</div>
+						</div>
+      				</div>
+      			</div>
+      		</div>
+      	</section>
+        <section class="s_should">
+        	<div class="container">
+				<h2 class="g_title">Вам стоит выбрать светильники от LEDEK потому что:</h2>
+				<div class="s_should__body">
+					<div class="s_should__txt g_txt">
+						<ul>
+							<li>Работают при температурах от -60 до +60 градусов в любых погодных условиях.</li>
+							<li>Монтируются одним человеком за 3 минуты.</li>
+							<li>Продолжают работать после выстрела по ним из охотничьего карабина Сайга.</li>
+							<li>Легкие, компактные, энергоэффективные.</li>
+							<li>Потребуют замены только через 20 лет, работая 12 часов в сутки. <br> Срок их службы не зависит от количества циклов включения-выключения и составляет 100 тыс. часов.</li>
+							<li>Не нагреваются выше 44 градусов, благодаря разработанной нами уникальной системе теплоотведения.</li>
+							<li>Обладают герметичностью: могут выдерживать недолгое погружение в воду на глубину в 1 м, не боятся ураганов и ливней, их можно мыть из шланга.</li>
+						</ul>
+					</div>
+					<div class="s_should__right">
+						<a href="#" class="s_should__video"><span class="s_should__video_img" data-src="https://www.youtube.com/watch?v=B1yIJ706i78" data-tilt data-tilt-perspective="3000" data-tilt-scale="1.05" style="background-image: url('images/should.jpg')"><i><svg xmlns="http://www.w3.org/2000/svg" width="15" height="19" ><path filter="url(#Filter_1)" d="M14.6 9L1.6 0.1C1.5 0 1.3 0 1.1 0 1 0.1 0.9 0.3 0.9 0.4L0.9 18.4C0.9 18.5 1 18.7 1.1 18.8 1.2 18.8 1.3 18.8 1.4 18.8 1.4 18.8 1.5 18.8 1.6 18.7L14.6 9.8C14.7 9.7 14.8 9.6 14.8 9.4 14.8 9.3 14.7 9.1 14.6 9Z" fill="rgb(0, 255, 0)"/></svg></i></span></a>
+					</div>
+				</div>
+        	</div>
+        </section>
+        <section class="s_why">
+        	<div class="container">
+        		<div class="s_why__body">
+        			<div class="s_why__item">
+						<i><svg xmlns="http://www.w3.org/2000/svg" width="40" height="47"><path d="M25.3 31.2L32.4 33.1C36.9 34.3 40 38.2 40 42.8L40 45.1 38.9 45.1C39.5 45.1 39.9 45.5 39.9 46 39.9 46.6 39.5 47 38.9 47L1.1 47C0.5 47 0.1 46.6 0.1 46 0.1 45.5 0.5 45.1 1.1 45.1L0 45.1 0 42.8C0 38.2 3.1 34.3 7.6 33.1L14.6 31.2 14.6 28.9C14.6 28.8 14.7 28.7 14.7 28.6 14.7 28.6 14.7 28.6 14.7 28.6L14.7 28.6C12.5 27.4 10.9 25.5 10.1 23.3L8.2 23.3C6.3 23.3 4.8 21.9 4.8 20.1L4.8 15.9C4.8 15 5.3 14.1 6 13.5 6.1 6 12.3 0 20 0 27.7 0 34 6.1 34 13.5 34.7 14.1 35.1 15 35.1 15.9L35.1 20.1C35.1 21.9 33.6 23.3 31.8 23.3L29.9 23.3C29.1 25.5 27.5 27.4 25.3 28.6 25.3 28.6 25.3 28.6 25.3 28.6 25.3 28.7 25.3 28.8 25.3 28.9L25.3 31.2ZM8.1 34.9C4.5 35.9 2 39.1 2 42.8L2 45.1 18.7 45.1 15 33.1 8.1 34.9ZM20 42.6L23.4 31.8 23.4 29.4C22.3 29.7 21.1 29.9 20 29.9 18.9 29.9 17.7 29.7 16.6 29.4L16.6 31.8 20 42.6ZM6.8 15.9L6.8 20.1C6.8 20.8 7.4 21.4 8.2 21.4L9.5 21.4C9.5 20.9 9.4 20.3 9.4 19.7L9.4 14.6C9.4 14.6 9.4 14.6 9.4 14.6L8.2 14.6C7.4 14.6 6.8 15.2 6.8 15.9ZM31.8 21.4C32.5 21.4 33.1 20.8 33.1 20.1L33.1 15.9C33.1 15.2 32.5 14.6 31.8 14.6L30.6 14.6 30.6 19.7C30.6 20.3 30.6 20.9 30.5 21.4L31.8 21.4ZM30.5 12.6C30.6 12.6 30.6 12.7 30.6 12.7L31.8 12.7C31.9 12.7 31.9 12.7 32 12.7 31.5 6.7 26.3 1.9 20 1.9 13.7 1.9 8.5 6.7 8 12.7 8 12.7 8.1 12.7 8.2 12.7L9.4 12.7C9.9 7.4 14.5 3.2 20 3.2 25.5 3.2 30 7.3 30.5 12.6ZM11.4 13.7L21.6 13.7C23.1 13.7 24.5 13.2 25.7 12.4L28.1 10.8C27 7.5 23.8 5.2 20 5.2 15.3 5.2 11.4 8.9 11.4 13.5 11.4 13.6 11.4 13.6 11.4 13.7ZM26.5 25.2L23.8 25.2C23.5 26.1 22.7 26.7 21.8 26.7L19.5 26.7C18.3 26.7 17.3 25.7 17.3 24.6L17.3 23.6C17.3 22.4 18.3 21.5 19.5 21.5L21.8 21.5C22.9 21.5 23.8 22.3 23.9 23.3L27.8 23.3C28.3 22.2 28.6 21 28.6 19.7L28.6 13.7C28.6 13.7 28.6 13.6 28.6 13.5 28.6 13.3 28.6 13.1 28.6 12.8L26.9 14C25.3 15 23.5 15.6 21.6 15.6L11.4 15.6 11.4 19.7C11.4 22.7 13 25.4 15.7 26.9L15.7 26.9C18.4 28.4 21.7 28.4 24.3 26.9 25.2 26.4 25.9 25.9 26.5 25.2ZM21.9 24.6L21.9 23.6C21.9 23.5 21.9 23.4 21.8 23.4L19.5 23.4C19.4 23.4 19.3 23.5 19.3 23.6L19.3 24.6C19.3 24.7 19.4 24.7 19.5 24.7L21.8 24.7C21.9 24.7 21.9 24.7 21.9 24.6ZM25 33.1L21.3 45.1 38 45.1 38 42.8C38 39.1 35.5 35.9 31.9 34.9L25 33.1ZM30.8 42.4L26.9 42.4C26.4 42.4 25.9 41.9 25.9 41.4 25.9 40.9 26.4 40.4 26.9 40.4L30.8 40.4C31.3 40.4 31.8 40.9 31.8 41.4 31.8 41.9 31.3 42.4 30.8 42.4ZM34.1 40.4C34.4 40.4 34.6 40.6 34.8 40.7 35 40.9 35.1 41.2 35.1 41.4 35.1 41.7 35 41.9 34.8 42.1 34.6 42.3 34.4 42.4 34.1 42.4 33.9 42.4 33.6 42.3 33.4 42.1 33.2 41.9 33.1 41.7 33.1 41.4 33.1 41.2 33.2 40.9 33.4 40.7 33.6 40.6 33.9 40.4 34.1 40.4Z" stroke="rgb(24, 117, 204)" fill="transparent"/></svg></i>
+						<h3>Сервис</h3>
+						<p>Наша гарантия круче, <br>чем КАСКО</p>
+        			</div>
+					<div class="s_why__item">
+						<i><svg xmlns="http://www.w3.org/2000/svg" width="41" height="48"><path d="M32 41.3C27.5 45.6 22.4 48 20.5 48 18.6 48 13.5 45.6 9 41.3 4.9 37.2 0 30.2 0 19.6L0 9.3C0 8.8 0.3 8.4 0.7 8.3 7.5 6.4 13.8 3.8 20 0.1 20.3 0 20.7 0 21 0.1 27 3.7 33.6 6.5 40.3 8.3 40.7 8.4 41 8.8 41 9.3L41 19.6C41 30.2 36.1 37.2 32 41.3ZM39 10C32.6 8.2 26.3 5.5 20.5 2.2 14.6 5.6 8.5 8.2 2 10L2 19.6C2 29.5 6.6 36.1 10.4 39.8 14.8 44.1 19.5 46 20.5 46 21.5 46 26.2 44.1 30.6 39.8 34.4 36.1 39 29.5 39 19.6L39 10ZM29.7 37.9C28.7 38.9 27.7 39.8 26.6 40.7 26.4 40.8 26.2 40.9 26 40.9 25.7 40.9 25.4 40.7 25.2 40.5 24.8 40 24.9 39.4 25.3 39.1 26.4 38.3 27.3 37.4 28.2 36.5 29.3 35.3 30.3 34.1 31.1 32.9 31.5 32.4 32.1 32.3 32.5 32.6 33 32.9 33.1 33.5 32.8 34 31.9 35.3 30.9 36.7 29.7 37.9ZM24 42.4L23.9 42.4C23.8 42.5 23.6 42.6 23.4 42.6 23.1 42.6 22.8 42.4 22.6 42 22.3 41.6 22.5 40.9 22.9 40.7L23 40.6C23.5 40.4 24.1 40.5 24.4 41 24.7 41.5 24.5 42.1 24 42.4ZM13.9 10L13.9 10C13.7 10.1 13.6 10.1 13.5 10.1 13.1 10.1 12.7 9.9 12.5 9.5 12.3 9 12.5 8.4 13 8.2L13.1 8.2C13.6 7.9 14.2 8.2 14.4 8.7 14.6 9.2 14.4 9.8 13.9 10ZM11 11.2C9.3 11.9 7.7 12.5 6 13L6 16.2C6 16.7 5.6 17.2 5 17.2 4.5 17.2 4 16.7 4 16.2L4 12.3C4 11.8 4.3 11.4 4.7 11.3 6.6 10.7 8.4 10.1 10.2 9.3 10.7 9.1 11.3 9.4 11.5 9.9 11.7 10.4 11.5 11 11 11.2Z" stroke="rgb(24, 117, 204)" fill="transparent"/></svg></i>
+						<h3>Надежность</h3>
+						<p>Выдерживает скачки напряжения до 3000В</p>
+					</div>
+					<div class="s_why__item">
+						<i><svg xmlns="http://www.w3.org/2000/svg" width="42" height="45"><path d="M41.1 45L0.9 45C0.4 45 0 44.6 0 44.1 0 43.6 0.4 43.2 0.9 43.2L2.9 43.2 2.9 35.3C2.9 34 3.9 33 5.2 33L9.4 33C10.7 33 11.8 34 11.8 35.3L11.8 43.2 16.6 43.2 16.6 27.9C16.6 26.6 17.6 25.6 18.9 25.6L23.2 25.6C24.5 25.6 25.5 26.6 25.5 27.9L25.5 43.2 30.3 43.2 30.3 15.3C30.3 13.9 31.4 12.9 32.7 12.9L36.9 12.9C38.2 12.9 39.2 13.9 39.2 15.3L39.2 43.2 41.1 43.2C41.6 43.2 42 43.6 42 44.1 42 44.6 41.6 45 41.1 45ZM10 35.3C10 35 9.8 34.7 9.4 34.7L5.2 34.7C4.9 34.7 4.6 35 4.6 35.3L4.6 43.2 10 43.2 10 35.3ZM23.8 27.9C23.8 27.6 23.5 27.3 23.2 27.3L18.9 27.3C18.6 27.3 18.3 27.6 18.3 27.9L18.3 43.2 23.8 43.2 23.8 27.9ZM37.5 15.3C37.5 14.9 37.2 14.6 36.9 14.6L32.7 14.6C32.3 14.6 32.1 14.9 32.1 15.3L32.1 43.2 37.5 43.2 37.5 15.3ZM38.4 6.9C37.9 6.9 37.5 6.5 37.5 6L37.5 3 28.3 12.3C28 12.7 27.4 12.7 27.1 12.3L23.9 9 8.9 24.2C8.7 24.4 8.5 24.5 8.3 24.5 8.1 24.5 7.9 24.4 7.7 24.2 7.3 23.9 7.3 23.3 7.7 23L23.3 7.2C23.4 7 23.6 6.9 23.9 6.9 24.1 6.9 24.3 7 24.5 7.2L27.7 10.4 36.3 1.8 33 1.8C32.6 1.8 32.2 1.4 32.2 0.9 32.2 0.4 32.6 0 33 0L38.3 0C38.3 0 38.3 0 38.3 0 38.6 0 38.8 0.1 39 0.3 39.2 0.4 39.2 0.7 39.2 0.9 39.2 0.9 39.2 1 39.2 1L39.2 6C39.2 6.5 38.8 6.9 38.4 6.9ZM5.4 27.5C4.9 27.5 4.5 27.1 4.5 26.7 4.5 26.2 4.9 25.8 5.4 25.8 5.9 25.8 6.2 26.2 6.2 26.7 6.2 27.1 5.9 27.5 5.4 27.5Z" stroke="rgb(24, 117, 204)" fill="transparent"/></svg></i>
+						<h3>Опыт</h3>
+						<p>Купите наш опыт реализации более 2000 объектов</p>
+					</div>
+					<div class="s_why__item">
+						<i><svg xmlns="http://www.w3.org/2000/svg" width="53" height="45"><path d="M53 40.6C53 43 51.1 45 48.7 45L27.1 45C24.5 45 21.9 44.1 20 42.3 19.8 43.8 18.6 45 17.1 45L1 45C0.5 45 0 44.5 0 44L0 17.1C0 16.6 0.5 16.1 1 16.1L17.1 16.1C18.4 16.1 19.5 17 19.9 18.2 20.8 17.7 21.6 17.1 22.5 16.4 25.5 13.9 28 10.6 29.7 6.8 30.1 5.7 30.5 4.5 30.8 3.1 30.9 2.4 31.3 1.7 31.8 1.2 32.9 0.1 34.3 0 34.7 0 36.9 0 38.7 1.8 38.7 4.1 38.7 4.5 38.8 4.9 38.8 5.3 38.8 5.9 38.8 6.5 38.8 7 38.7 10.2 37.8 13.3 36.2 16.1L48.7 16.1C51.1 16.1 53 18 53 20.5L53 20.6C53 21.9 52.4 23.1 51.5 23.9 52.4 24.7 53 25.9 53 27.2L53 27.2C53 28.6 52.4 29.7 51.5 30.5 52.4 31.3 53 32.5 53 33.9L53 34C53 35.3 52.4 36.5 51.5 37.3 52.4 38.1 53 39.3 53 40.6ZM17.9 19.9C17.9 19.9 17.9 19.9 17.9 19.9L17.9 19C17.9 18.5 17.5 18.2 17.1 18.2L2.1 18.2 2.1 42.9 11.2 42.9 11.2 33.9C11.2 33.3 11.7 32.8 12.3 32.8 12.8 32.8 13.3 33.3 13.3 33.9L13.3 42.9 17.1 42.9C17.5 42.9 17.9 42.5 17.9 42.1L17.9 19.9ZM50.9 27.2C50.9 25.9 49.9 24.9 48.7 24.9L45.8 24.9C45.2 24.9 44.8 24.5 44.8 23.9 44.8 23.3 45.2 22.8 45.8 22.8L48.7 22.8C49.9 22.8 50.9 21.8 50.9 20.6L50.9 20.6 50.9 20.5C50.9 19.2 49.9 18.2 48.7 18.2L34.3 18.2C34 18.2 33.6 18 33.4 17.6 33.2 17.3 33.3 16.8 33.5 16.5 35.5 13.7 36.6 10.4 36.7 7 36.7 6.4 36.7 5.9 36.7 5.3 36.7 4.9 36.7 4.5 36.7 4.1 36.7 3 35.8 2.1 34.7 2.1 34.7 2.1 34.7 2.1 34.6 2.1 34.5 2.1 33.8 2.1 33.3 2.6 33 2.9 32.9 3.2 32.8 3.5 32.5 5.1 32.1 6.4 31.6 7.6 29.7 11.8 27.1 15.3 23.8 18 22.6 19 21.3 19.8 20 20.6L20 39.5 20.9 40.4C22.6 42 24.8 42.9 27.1 42.9L48.7 42.9C49.9 42.9 50.9 41.9 50.9 40.6 50.9 39.4 49.9 38.4 48.7 38.4L45.8 38.4C45.2 38.4 44.8 37.9 44.8 37.3 44.8 36.7 45.2 36.3 45.8 36.3L48.7 36.3C49.9 36.3 50.9 35.3 50.9 34L50.9 33.9C50.9 32.6 49.9 31.6 48.7 31.6L45.8 31.6C45.2 31.6 44.8 31.1 44.8 30.5 44.8 30 45.2 29.5 45.8 29.5L48.7 29.5C49.9 29.5 50.9 28.5 50.9 27.2L50.9 27.2ZM12.3 30.3C11.7 30.3 11.2 29.8 11.2 29.2 11.2 28.7 11.7 28.2 12.3 28.2 12.8 28.2 13.3 28.7 13.3 29.2 13.3 29.8 12.8 30.3 12.3 30.3Z" stroke="rgb(24, 117, 204)" fill="transparent"/></svg></i>
+						<h3>Удобство</h3>
+						<p>Светильник устанавливается <br>1 человеком за 3 минуты</p>
+					</div>
+					<div class="s_why__item">
+						<i><svg xmlns="http://www.w3.org/2000/svg" width="36" height="50"><path d="M36 18.2C36 8.2 27.9 0 18 0 8.1 0 0 8.2 0 18.2 0 24.2 2.9 29.9 7.9 33.3 7.9 33.3 7.9 33.3 8 33.3 8 33.4 8.1 33.4 8.1 33.4 9.9 34.8 10.7 36.1 11.1 38.3L11.1 43.2C11.1 45.8 12.9 48 15.2 48.5 15.3 49.4 16 50 16.9 50L19.2 50C20 50 20.7 49.4 20.8 48.5 23.2 48 24.9 45.8 24.9 43.2L24.9 38.3C25.3 36.1 26.2 34.7 28 33.3 28.1 33.3 28.1 33.3 28.1 33.3 33 29.9 36 24.3 36 18.2ZM23.1 43.2C23.1 45.2 21.5 46.8 19.6 46.8L16.4 46.8C15.1 46.8 13.9 46 13.3 44.9L20.4 44.9C20.9 44.9 21.3 44.5 21.3 43.9 21.3 43.4 20.9 43 20.4 43L12.9 43 12.9 42.1 20.4 42.1C20.9 42.1 21.3 41.6 21.3 41.1 21.3 40.6 20.9 40.2 20.4 40.2L12.9 40.2 12.9 39.3 23.1 39.3 23.1 43.2ZM16.6 37.4L12.5 22.6C12.8 22.9 13.2 23.1 13.7 23.1 14.7 23.1 15.2 22.3 15.5 21.9 15.6 21.7 15.8 21.5 15.8 21.5 15.8 21.5 15.8 21.5 15.8 21.5 15.8 21.5 15.8 21.5 15.8 21.5 15.9 21.5 16.1 21.7 16.1 21.9 16.4 22.3 17 23.1 18 23.1 19 23.1 19.5 22.3 19.8 21.9 19.9 21.7 20 21.5 20.1 21.5 20.1 21.5 20.1 21.5 20.1 21.5 20.1 21.5 20.1 21.5 20.1 21.5 20.2 21.5 20.3 21.7 20.4 21.9 20.7 22.3 21.2 23.1 22.3 23.1 22.9 23.1 23.3 22.8 23.6 22.5L19.4 37.4 16.6 37.4 16.6 37.4ZM26.9 31.8C26.9 31.8 26.9 31.9 26.8 31.9 24.8 33.4 23.7 35 23.2 37.4L21.3 37.4 26.3 19.8C26.4 19.3 26.1 18.8 25.7 18.6 25.2 18.5 24.7 18.8 24.5 19.3L24.4 19.6C23.4 19.6 22.9 20.4 22.6 20.8 22.5 20.9 22.3 21.2 22.3 21.2 22.3 21.2 22.3 21.2 22.3 21.2 22.3 21.2 22.3 21.2 22.3 21.2 22.2 21.2 22 20.9 22 20.8 21.7 20.4 21.1 19.6 20.1 19.6 19.1 19.6 18.6 20.4 18.3 20.8 18.2 20.9 18.1 21.2 18 21.2 18 21.2 18 21.2 18 21.2 18 21.2 18 21.2 18 21.2 17.9 21.2 17.8 20.9 17.7 20.8 17.4 20.4 16.9 19.6 15.8 19.6 14.8 19.6 14.3 20.4 14 20.8 13.9 20.9 13.8 21.2 13.7 21.2 13.7 21.2 13.7 21.2 13.7 21.2 13.7 21.2 13.7 21.2 13.7 21.2 13.6 21.2 13.5 20.9 13.4 20.8 13.1 20.4 12.6 19.7 11.6 19.6L11.5 19.3C11.4 18.8 10.9 18.5 10.4 18.6 9.9 18.8 9.6 19.3 9.8 19.8L14.7 37.4 12.8 37.4C12.3 35.1 11.2 33.5 9.2 31.9 9.2 31.9 9.2 31.9 9.1 31.9 9.1 31.8 9.1 31.8 9 31.8 4.5 28.7 1.8 23.7 1.8 18.2 1.8 9.2 9.1 1.9 18 1.9 26.9 1.9 34.2 9.2 34.2 18.2 34.2 23.7 31.5 28.8 26.9 31.8Z" stroke="rgb(24, 117, 204)" fill="transparent"/></svg></i>
+						<h3>Индивидуальность</h3>
+						<p>Сами выберите свой дизайн</p>
+					</div>
+        		</div>
+        		<form class="g_form _validate" action="/">
+        			<input type="hidden" name="form">
+					<h2 class="g_title">Закажите консультацию специалиста бесплатно!</h2>
+					<p>Мы перезвоним вам в течение 28 секунд</p>
+       				<div class="g_input">
+       					<input type="text" name="name">
+						<span>Ваше имя</span>
+						<svg class="g_input__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_input__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg>
+       				</div>
+					<div class="g_input">
+						<input type="text" name="phone">
+						<span>Ваш телефон</span>
+						<svg class="g_input__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path class="g_input__path" d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg>
+					</div>
+					<button type="submit"><span class="g_btn"><span>отправить</span><svg class="g_btn__svg" viewBox="0 0 220 53.5" preserveAspectRatio="none"><path filter="url(#Filter_0)" class="g_btn__path" transform="translate(0 0)" d="M 12 6.25 C 44.5 6.25 77 6.25 109.5 6.25 C 142 6.25 174.5 6.25 207 6.25 C 210.866 6.25 214 9.384 214 13.25 L 214 27.25 C 213.91 32.25 213.91 32.25 214 41.25 C 214 45.116 210.866 48.25 207 48.25 C 174.5 48.25 142 48.25 109.5 48.25 C 77 48.25 44.5 48.25 12 48.25 C 8.134 48.25 5 45.116 5 41.25 C 5 35 5.05 31.71 5 26.75 C 4.95 21.79 5 18.25 5 13.25 C 5 9.384 8.134 6.25 12 6.25 Z"></path></svg></span></button>
+        		</form>
+        	</div>
+        </section>
+		<section class="s_solve">
+			<div class="container">
+				<div class="s_solve__slider_wrp swiper-container">
+					<div class="s_solve__head">
+						<h2 class="g_title">Так мы решаем задачи</h2>
+						<div class="s_solve__arr g_arr">
+							<div class="s_solve__arr_prev"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="15"><path d="M1.6 7.6L7.6 14.3 6.8 15 0.9 8.4 0.8 8.5 0 7.8 7.2 0 8 0.6 1.6 7.6Z" fill="rgb(24, 117, 204)"/></svg></div>
+							<div class="s_solve__arr_next"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="16"><path d="M7.6 9.3L7.5 9.2 1.8 16 1 15.3 6.8 8.4 0.6 1.3 1.4 0.7 8.4 8.7 7.6 9.3Z" fill="rgb(24, 117, 204)"/></svg></div>
+						</div>
+					</div>
+					<div class="s_solve__slider swiper-wrapper">
+						<div class="s_solve__item swiper-slide">
+							<div class="s_solve__txt">
+								<h3>Клиент: Автопарковка Greenwich</h3>
+								<hr>
+								<p><b>Задача</b></p>
+								<p>Осветить парковочные места в соответствии с нормами освещенности</p>
+								<hr>
+								<p><b>Решение</b></p>
+								<p>Установка мощных 300 Вт энергоэффективных светильников</p>
+								<hr>
+								<p><b>Результат</b></p>
+								<p>Соблюдены нормы освещенности и минимизированы затраты на электричество</p>
+								<hr>
+								<p><b>Используемые светильники</b></p>
+								<p>NANO - SREET 300</p>
+							</div>
+							<div class="s_solve__right">
+								<div class="s_solve__img swiper-container">
+									<div class="s_solve__img_slider swiper-wrapper">
+										<div class="s_solve__img_item swiper-slide" style="background-image: url('http://placehold.it/630x325/1875cc/fff')"></div>
+										<div class="s_solve__img_item swiper-slide" style="background-image: url('http://placehold.it/630x326/00ff00/fff')"></div>
+										<div class="s_solve__img_item swiper-slide" style="background-image: url('http://placehold.it/630x327/333/fff')"></div>
+										<div class="s_solve__img_item swiper-slide" style="background-image: url('http://placehold.it/630x328/00ff00/000')"></div>
+										<div class="s_solve__img_item swiper-slide" style="background-image: url('http://placehold.it/630x329/1875cc/fff')"></div>
+									</div>
+								</div>
+								<div class="s_solve__thumb swiper-container">
+									<div class="s_solve__thumb_slider swiper-wrapper">
+										<div class="s_solve__thumb_item swiper-slide" style="background-image: url('http://placehold.it/190x125/1875cc/fff')"></div>
+										<div class="s_solve__thumb_item swiper-slide" style="background-image: url('http://placehold.it/190x125/00ff00/fff')"></div>
+										<div class="s_solve__thumb_item swiper-slide" style="background-image: url('http://placehold.it/190x125/333/fff')"></div>
+										<div class="s_solve__thumb_item swiper-slide" style="background-image: url('http://placehold.it/190x125/00ff00/000')"></div>
+										<div class="s_solve__thumb_item swiper-slide" style="background-image: url('http://placehold.it/190x125/1875cc/fff')"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="s_solve__item swiper-slide">
+							<div class="s_solve__txt">
+								<h3>Клиент: Lorem ipsum</h3>
+								<hr>
+								<p><b>Задача</b></p>
+								<p>Осветить парковочные места в соответствии с нормами освещенности</p>
+								<hr>
+								<p><b>Решение</b></p>
+								<p>Установка мощных 300 Вт энергоэффективных светильников</p>
+								<hr>
+								<p><b>Результат</b></p>
+								<p>Соблюдены нормы освещенности и минимизированы затраты на электричество</p>
+								<hr>
+								<p><b>Используемые светильники</b></p>
+								<p>NANO - SREET 300</p>
+							</div>
+							<div class="s_solve__right">
+								<div class="s_solve__img swiper-container">
+									<div class="s_solve__img_slider swiper-wrapper">
+										<div class="s_solve__img_item swiper-slide" style="background-image: url('http://placehold.it/630x325/1875cc/fff')"></div>
+										<div class="s_solve__img_item swiper-slide" style="background-image: url('http://placehold.it/630x327/333/fff')"></div>
+										<div class="s_solve__img_item swiper-slide" style="background-image: url('http://placehold.it/630x328/00ff00/000')"></div>
+										<div class="s_solve__img_item swiper-slide" style="background-image: url('http://placehold.it/630x329/1875cc/fff')"></div>
+									</div>
+								</div>
+								<div class="s_solve__thumb swiper-container">
+									<div class="s_solve__thumb_slider swiper-wrapper">
+										<div class="s_solve__thumb_item swiper-slide" style="background-image: url('http://placehold.it/190x125/1875cc/fff')"></div>
+										<div class="s_solve__thumb_item swiper-slide" style="background-image: url('http://placehold.it/190x125/333/fff')"></div>
+										<div class="s_solve__thumb_item swiper-slide" style="background-image: url('http://placehold.it/190x125/00ff00/000')"></div>
+										<div class="s_solve__thumb_item swiper-slide" style="background-image: url('http://placehold.it/190x125/1875cc/fff')"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="s_garant">
+			<div class="container">
+				<h2 class="g_title">5 лет безусловной гарантии</h2>
+				<div class="s_garant__body g_txt">
+					<div class="s_garant__col">
+						<ul>
+							<li>Полный аудит Вашей системы освещения.</li>
+							<li>3 Варианта проекта освещения с 3D визуализацией.</li>
+							<li>Экономическое обоснование. 12 ключевых показателей.</li>
+							<li>Предоставим светильники на тест-драйв на 7 дней.</li>
+							<li>Произведем любой светильник по Вашему заказу.</li>
+						</ul>
+					</div>
+					<div class="s_garant__col">
+						<ul>
+							<li>Замена и доставка без условий и полностью за наш счет! </li>
+							<li>Что значит гарантия 5 лет без условий? Вышедший из строя светильник меняем на новый. </li>
+							<li>Отправляем  на следующий день по Вашей заявке. Все расходы по логистике за наш счет. </li>
+							<li>Все эти привилегии есть в нашем стандартном договоре.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="s_services">
+			<div class="container">
+				<div class="s_services__body">
+					<a class="s_services__item" href="#">
+						<div class="s_services__item_img"><span style="background-image: url('images/services/1.jpg')"></span></div>
+						<h3 class="g_title"><span>Магистральное освещение</span></h3>
+						<div class="g_link"><span>смотреть подробнее</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></div>
+					</a>
+					<a class="s_services__item" href="#">
+						<div class="s_services__item_img" href="#"><span style="background-image: url('images/services/2.jpg')"></span></div>
+						<h3 class="g_title"><span>Освещение АЗС</span></h3>
+						<div href="#" class="g_link"><span>смотреть подробнее</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></div>
+					</a>
+					<a class="s_services__item" href="#">
+						<div class="s_services__item_img" href="#"><span style="background-image: url('images/services/3.jpg')"></span></div>
+						<h3 class="g_title"><span>Освещение спортивных объектов</span></h3>
+						<div href="#" class="g_link"><span>смотреть подробнее</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></div>
+					</a>
+					<a class="s_services__item" href="#">
+						<div class="s_services__item_img" href="#"><span style="background-image: url('images/services/4.jpg')"></span></div>
+						<h3 class="g_title"><span>Промышленное освещение</span></h3>
+						<div href="#" class="g_link"><span>смотреть подробнее</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></div>
+					</a>
+					<a class="s_services__item" href="#">
+						<div class="s_services__item_img" href="#"><span style="background-image: url('images/services/5.jpg')"></span></div>
+						<h3 class="g_title"><span>Торговое освещение</span></h3>
+						<div href="#" class="g_link"><span>смотреть подробнее</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></div>
+					</a>
+					<a class="s_services__item" href="#">
+						<div class="s_services__item_img" href="#"><span style="background-image: url('images/services/6.jpg')"></span></div>
+						<h3 class="g_title"><span>Уличное и парковое освещение</span></h3>
+						<div href="#" class="g_link"><span>смотреть подробнее</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></div>
+					</a>
+				</div>
+				<form class="g_form s_services__form _validate" action="/">
+					<input type="hidden" name="form">
+					<h2 class="g_title">Получите экономическое обоснование <br>и 3D модель вашего объекта</h2>
+					<div class="g_input">
+						<input type="text" name="name">
+						<span>Ваше имя</span>
+						<svg class="g_input__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path class="g_input__path" d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg>
+					</div>
+					<div class="g_input">
+						<input type="text" name="phone">
+						<span>Ваш телефон</span>
+						<svg class="g_input__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path class="g_input__path" d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg>
+					</div>
+					<div class="g_upload">
+						<div class="g_upload__btn">
+							<i><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"><path d="M3 17C2.2 17 1.5 16.7 0.9 16 -0.3 14.8-0.3 12.7 0.9 11.4L10.2 1.3C11 0.4 12 0 13 0 14.1 0 15.1 0.4 15.8 1.3 16.6 2.1 17 3.2 17 4.3 17 5.5 16.6 6.6 15.8 7.4L8.5 15.4C8.3 15.6 7.9 15.6 7.7 15.4 7.5 15.1 7.5 14.7 7.7 14.5L15 6.5C15.6 5.9 15.9 5.2 15.9 4.3 15.9 3.5 15.6 2.7 15 2.1 14.5 1.5 13.8 1.2 13 1.2 12.3 1.2 11.5 1.5 11 2.1L1.7 12.3C0.9 13.1 0.9 14.4 1.7 15.2 2.4 15.9 3.6 15.9 4.4 15.2L10.6 8.4C10.8 8.2 10.9 7.9 10.9 7.7 10.9 7.4 10.8 7.1 10.6 7 10.3 6.6 9.7 6.6 9.3 7L5 11.6C4.8 11.8 4.5 11.8 4.2 11.6 4 11.4 4 11 4.2 10.7L8.5 6.1C9.3 5.2 10.6 5.2 11.4 6.1 11.8 6.5 12 7.1 12 7.7 12 8.2 11.8 8.8 11.4 9.2L5.1 16C4.6 16.7 3.8 17 3 17Z" fill="rgb(48, 48, 48)"/></svg></i>
+							<span>Прикрепить план помещения <small>(Выберите или перетащите файл)</small></span>
+						</div>
+						<div class="g_upload__info"></div>
+					</div>
+					<button type="submit"><span class="g_btn"><span>отправить</span><svg class="g_btn__svg" viewBox="0 0 220 53.5" preserveAspectRatio="none"><path filter="url(#Filter_0)" class="g_btn__path" transform="translate(0 0)" d="M 12 6.25 C 44.5 6.25 77 6.25 109.5 6.25 C 142 6.25 174.5 6.25 207 6.25 C 210.866 6.25 214 9.384 214 13.25 L 214 27.25 C 213.91 32.25 213.91 32.25 214 41.25 C 214 45.116 210.866 48.25 207 48.25 C 174.5 48.25 142 48.25 109.5 48.25 C 77 48.25 44.5 48.25 12 48.25 C 8.134 48.25 5 45.116 5 41.25 C 5 35 5.05 31.71 5 26.75 C 4.95 21.79 5 18.25 5 13.25 C 5 9.384 8.134 6.25 12 6.25 Z"></path></svg></span></button>
+				</form>
+			</div>
+		</section>
+		<section class="s_trust">
+			<div class="container">
+				<div class="s_trust__slider_wrp swiper-container">
+					<div class="s_trust__head">
+						<h2 class="g_title">Нам доверяют</h2>
+						<div class="s_trust__arr g_arr">
+							<div class="s_trust__arr_prev"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="15"><path d="M1.6 7.6L7.6 14.3 6.8 15 0.9 8.4 0.8 8.5 0 7.8 7.2 0 8 0.6 1.6 7.6Z" fill="rgb(24, 117, 204)"/></svg></div>
+							<div class="s_trust__arr_next"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="16"><path d="M7.6 9.3L7.5 9.2 1.8 16 1 15.3 6.8 8.4 0.6 1.3 1.4 0.7 8.4 8.7 7.6 9.3Z" fill="rgb(24, 117, 204)"/></svg></div>
+						</div>
+					</div>
+					<div class="s_trust__slider swiper-wrapper">
+						<div class="s_trust__item swiper-slide"><img src="images/trust/1.png" alt=""></div>
+						<div class="s_trust__item swiper-slide"><img src="images/trust/2.png" alt=""></div>
+						<div class="s_trust__item swiper-slide"><img src="images/trust/3.png" alt=""></div>
+						<div class="s_trust__item swiper-slide"><img src="images/trust/4.png" alt=""></div>
+						<div class="s_trust__item swiper-slide"><img src="images/trust/5.png" alt=""></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="s_reviews">
+			<div class="container">
+				<h2 class="g_title">Слово нашим клиентам</h2>
+				<div class="s_reviews__body">
+					<div class="s_reviews__item">
+						<div class="s_reviews__item_imgWrap">
+							<a class="s_reviews__item_img" style="background-image: url('images/reviews/1.jpg')" href="https://youtu.be/y64ScHCagLU" data-tilt data-tilt-perspective="3000"><i><svg xmlns="http://www.w3.org/2000/svg" width="15" height="19"><path filter="url(#Filter_1)" d="M14.6 9L1.6 0.1C1.5 0 1.3 0 1.1 0 1 0.1 0.9 0.3 0.9 0.4L0.9 18.4C0.9 18.5 1 18.7 1.1 18.8 1.2 18.8 1.3 18.8 1.4 18.8 1.4 18.8 1.5 18.8 1.6 18.7L14.6 9.8C14.7 9.7 14.8 9.6 14.8 9.4 14.8 9.3 14.7 9.1 14.6 9Z" fill="rgb(0, 255, 0)"/></svg></i></a>
+						</div>
+						<h3><span>Мухин Михаил Витальевич</span><small>OOO "Михаил"</small></h3>
+						<div class="s_reviews__item_audio">
+							<audio controls controlsList="nodownload">
+								<source src="audio/1.ogg" type="audio/ogg">
+								Ваш браузер не поддерживает аудио
+							</audio>
+						</div>
+					</div>
+					<div class="s_reviews__item">
+						<div class="s_reviews__item_imgWrap">
+							<a class="s_reviews__item_img" data-tilt data-tilt-perspective="3000" style="background-image: url('images/reviews/2.jpg')" href="https://youtu.be/y64ScHCagLU"><i><svg xmlns="http://www.w3.org/2000/svg" width="15" height="19"><path filter="url(#Filter_1)" d="M14.6 9L1.6 0.1C1.5 0 1.3 0 1.1 0 1 0.1 0.9 0.3 0.9 0.4L0.9 18.4C0.9 18.5 1 18.7 1.1 18.8 1.2 18.8 1.3 18.8 1.4 18.8 1.4 18.8 1.5 18.8 1.6 18.7L14.6 9.8C14.7 9.7 14.8 9.6 14.8 9.4 14.8 9.3 14.7 9.1 14.6 9Z" fill="rgb(0, 255, 0)"/></svg></i></a>
+						</div>
+						<h3><span>Глазков Иван Андреевич</span><small>OOO "Титаник</small></h3>
+						<div class="s_reviews__item_audio">
+							<audio controls controlsList="nodownload">
+								<source src="audio/1.ogg" type="audio/ogg">
+								Ваш браузер не поддерживает аудио
+							</audio>
+						</div>
+					</div>
+					<div class="s_reviews__item">
+						<div class="s_reviews__item_imgWrap">
+							<a class="s_reviews__item_img" data-tilt data-tilt-perspective="3000" style="background-image: url('images/reviews/3.jpg')" href="https://youtu.be/y64ScHCagLU"><i><svg xmlns="http://www.w3.org/2000/svg" width="15" height="19"><path filter="url(#Filter_1)" d="M14.6 9L1.6 0.1C1.5 0 1.3 0 1.1 0 1 0.1 0.9 0.3 0.9 0.4L0.9 18.4C0.9 18.5 1 18.7 1.1 18.8 1.2 18.8 1.3 18.8 1.4 18.8 1.4 18.8 1.5 18.8 1.6 18.7L14.6 9.8C14.7 9.7 14.8 9.6 14.8 9.4 14.8 9.3 14.7 9.1 14.6 9Z" fill="rgb(0, 255, 0)"/></svg></i></a>
+						</div>
+						<h3><span>Мухин Михаил Витальевич</span><small>OOO "Михаил"</small></h3>
+						<div class="s_reviews__item_audio">
+							<audio controls controlsList="nodownload">
+								<source src="audio/1.ogg" type="audio/ogg">
+								Ваш браузер не поддерживает аудио
+							</audio>
+						</div>
+					</div>
+					<div class="s_reviews__item">
+						<div class="s_reviews__item_imgWrap">
+							<a class="s_reviews__item_img" data-tilt data-tilt-perspective="3000" style="background-image: url('images/reviews/4.jpg')" href="https://youtu.be/y64ScHCagLU"><i><svg xmlns="http://www.w3.org/2000/svg" width="15" height="19"><path filter="url(#Filter_1)" d="M14.6 9L1.6 0.1C1.5 0 1.3 0 1.1 0 1 0.1 0.9 0.3 0.9 0.4L0.9 18.4C0.9 18.5 1 18.7 1.1 18.8 1.2 18.8 1.3 18.8 1.4 18.8 1.4 18.8 1.5 18.8 1.6 18.7L14.6 9.8C14.7 9.7 14.8 9.6 14.8 9.4 14.8 9.3 14.7 9.1 14.6 9Z" fill="rgb(0, 255, 0)"/></svg></i></a>
+						</div>
+						<h3><span>Старостин Матфей Владимирович</span><small>OOO "Михаил"</small></h3>
+						<div class="s_reviews__item_audio">
+							<audio controls controlsList="nodownload">
+								<source src="audio/1.ogg" type="audio/ogg">
+								Ваш браузер не поддерживает аудио
+							</audio>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="s_docs">
+			<div class="container">
+				<div class="s_docs__slider_wrp swiper-container">
+					<div class="s_docs__head">
+						<h2 class="g_title">Нам доверяют</h2>
+						<div class="s_docs__arr g_arr">
+							<div class="s_docs__arr_prev"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="15"><path d="M1.6 7.6L7.6 14.3 6.8 15 0.9 8.4 0.8 8.5 0 7.8 7.2 0 8 0.6 1.6 7.6Z" fill="rgb(24, 117, 204)"/></svg></div>
+							<div class="s_docs__arr_next"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="16"><path d="M7.6 9.3L7.5 9.2 1.8 16 1 15.3 6.8 8.4 0.6 1.3 1.4 0.7 8.4 8.7 7.6 9.3Z" fill="rgb(24, 117, 204)"/></svg></div>
+						</div>
+					</div>
+					<div class="s_docs__slider swiper-wrapper">
+						<a class="s_docs__item swiper-slide" href="http://placehold.it/600x1000/00ff00"><span class="s_docs__item_img"><img src="images/docs/1.jpg" alt=""></span></a>
+						<a class="s_docs__item swiper-slide" href="http://placehold.it/683x1000/2c74ff/fff"><span class="s_docs__item_img"><img src="images/docs/2.jpg" alt=""></span></a>
+						<a class="s_docs__item swiper-slide" href="http://placehold.it/600x1010/00ff00"><span class="s_docs__item_img"><img src="images/docs/3.jpg" alt=""></span></a>
+						<a class="s_docs__item swiper-slide" href="http://placehold.it/600x1000/303030"><span class="s_docs__item_img"><img src="images/docs/4.jpg" alt=""></span></a>
+						<a class="s_docs__item swiper-slide" href="http://placehold.it/686x905"><span class="s_docs__item_img"><img src="images/docs/5.jpg" alt=""></span></a>
+					</div>
+				</div>
+				<form class="g_form _validate" action="/">
+					<input type="hidden" name="form">
+					<h2 class="g_title">Оставьте заявку сейчас и получите <br>3D модель с расчётами бесплатно!</h2>
+					<div class="g_input">
+						<input type="text" name="name">
+						<span>Ваше имя</span>
+						<svg class="g_input__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path class="g_input__path" d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg>
+					</div>
+					<div class="g_input">
+						<input type="text" name="phone">
+						<span>Ваш телефон</span>
+						<svg class="g_input__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path class="g_input__path" d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg>
+					</div>
+					<button type="submit"><span class="g_btn"><span>отправить</span><svg class="g_btn__svg" viewBox="0 0 220 53.5" preserveAspectRatio="none"><path filter="url(#Filter_0)" class="g_btn__path" transform="translate(0 0)" d="M 12 6.25 C 44.5 6.25 77 6.25 109.5 6.25 C 142 6.25 174.5 6.25 207 6.25 C 210.866 6.25 214 9.384 214 13.25 L 214 27.25 C 213.91 32.25 213.91 32.25 214 41.25 C 214 45.116 210.866 48.25 207 48.25 C 174.5 48.25 142 48.25 109.5 48.25 C 77 48.25 44.5 48.25 12 48.25 C 8.134 48.25 5 45.116 5 41.25 C 5 35 5.05 31.71 5 26.75 C 4.95 21.79 5 18.25 5 13.25 C 5 9.384 8.134 6.25 12 6.25 Z"></path></svg></span></button>
+				</form>
+			</div>
+		</section>
+		<footer class="footer">
+			<div class="footer__top">
+				<div class="container">
+					<div class="footer__body">
+						<a class="footer__gotop _anchor" href="0"><span>НАВЕРХ</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="8"><path d="M14 6.5L12.4 8 7 3 1.6 8 0 6.5 7 0 14 6.5Z" fill="rgb(24, 117, 204)"/></svg></a>
+						<div class="footer__first">
+							<a href="#" class="footer__logo"><span><img src="images/logo_footer.png" alt=""></span></a>
+							<a href="tel:88633090401" class="footer__tel"><span>8 863 309 04 01</span></a>
+							<small>Звонок по России бесплатный</small>
+							<a href="mailto:sales@ledek.ru" class="footer__info">
+								<i><svg xmlns="http://www.w3.org/2000/svg" width="22" height="15"><path d="M22 1.1C22 0.5 21.5 0 20.8 0 20.8 0 20.8 0 20.8 0L1.2 0C0.9 0 0.6 0.1 0.3 0.3 0.1 0.6 0 0.8 0 1.1L0 11.9C0 12.2 0.1 12.5 0.4 12.7 0.6 12.9 0.9 13 1.2 13 1.2 13 1.2 13 1.2 13L20.8 13C21.5 13 22 12.5 22 11.9L22 1.1ZM19.5 1.1L11.5 6.9 2.5 1.1 19.5 1.1ZM15.3 8L19.7 11.9 2.3 11.9 7.7 8C8 7.8 8 7.5 7.8 7.3 7.6 7 7.2 7 7 7.2L1.2 11.3 1.2 1.6 11.2 8C11.3 8.1 11.4 8.1 11.5 8.1 11.6 8.1 11.7 8.1 11.8 8L20.8 1.6 20.8 11.3 16 7.2C15.8 7 15.4 7 15.2 7.3 15 7.5 15.1 7.8 15.3 8Z" fill="rgb(138, 138, 138)"/></svg></i>
+								<span>sales@ledek.ru</span>
+							</a>
+							<p class="footer__info">
+								<i><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path d="M9 18C4 18 0 14 0 9 0 4 4 0 9 0 14 0 18 4 18 9 18 14 14 18 9 18ZM9 1.2C4.7 1.2 1.2 4.7 1.2 9 1.2 13.3 4.7 16.8 9 16.8 13.3 16.8 16.8 13.3 16.8 9 16.8 4.7 13.3 1.2 9 1.2ZM7 12.3C6.8 12.5 6.4 12.6 6.2 12.4 5.9 12.2 5.9 11.8 6.1 11.5L8.4 8.8 8.4 3C8.4 2.7 8.7 2.4 9 2.4 9.3 2.4 9.6 2.7 9.6 3L9.6 9C9.6 9.1 9.5 9.3 9.4 9.4L7 12.3Z" fill="rgb(138, 138, 138)"/></svg></i>
+								<span>График работы: По будням с 9.00 до 21.00</span>
+							</p>
+							<a href="#" class="footer__info">
+								<i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="19"><path d="M11.1 13.3C9.8 15.5 8.5 17.4 8.4 17.4L7.4 18.8C7.3 18.9 7.2 19 7 19 6.8 19 6.7 18.9 6.6 18.8L5.6 17.4C5.5 17.4 4.2 15.5 2.9 13.3 0.9 10 0 7.9 0 6.4 0 2.9 3.1 0 7 0 10.9 0 14 2.9 14 6.4 14 7.9 13.1 10 11.1 13.3ZM7 1C3.7 1 1 3.4 1 6.4 1 7.7 2 9.8 3.8 12.8 5.1 15 6.4 16.8 6.5 16.9L7 17.6 7.5 16.9C7.6 16.8 8.9 15 10.2 12.8 12 9.8 13 7.7 13 6.4 13 3.4 10.3 1 7 1ZM7 10C4.9 10 3.1 8.4 3.1 6.4 3.1 4.4 4.9 2.8 7 2.8 9.1 2.8 10.9 4.4 10.9 6.4 10.9 8.4 9.1 10 7 10ZM7 3.8C5.4 3.8 4.2 5 4.2 6.4 4.2 7.8 5.4 9 7 9 8.6 9 9.8 7.8 9.8 6.4 9.8 5 8.6 3.8 7 3.8Z" fill="rgb(138, 138, 138)"/></svg></i>
+								<span>Завод «Ледек», 344019, г. Ростов-на-Дону, <br>ул. Максима Горького, 276</span>
+							</a>
+						</div>
+						<div class="footer__links">
+							<div class="footer__links_col">
+								<h4>Каталог</h4>
+								<a href="#"><span>Категория 1</span></a>
+								<a href="#"><span>Категория 2</span></a>
+								<a href="#"><span>Категория 3</span></a>
+								<a href="#"><span>Категория 4</span></a>
+							</div>
+							<div class="footer__links_col">
+								<h4>Сферы применения</h4>
+								<a href="#"><span>Магистральное освещение</span></a>
+								<a href="#"><span>Освещение АЗС</span></a>
+								<a href="#"><span>Освещение спортивных объектов</span></a>
+								<a href="#"><span>Промышленное освещение</span></a>
+								<a href="#"><span>Торговое освещение</span></a>
+								<a href="#"><span>Уличное и парковое освещение</span></a>
+							</div>
+							<div class="footer__links_col">
+								<h4>Сервис</h4>
+								<a href="#"><span>Расчеты</span></a>
+								<a href="#"><span>Гарантии</span></a>
+								<a href="#"><span>Преимущества</span></a>
+								<a href="#"><span>Тест-драйв</span></a>
+							</div>
+							<div class="footer__links_col">
+								<h4>Скачать</h4>
+								<a href="#"><span>IES Файлы</span></a>
+								<a href="#"><span>Сертификаты</span></a>
+								<a href="#"><span>Паспорта</span></a>
+								<a href="#"><span>Каталог</span></a>
+								<a href="#"><span>Фото</span></a>
+								<a href="#"><span>Чертежи</span></a>
+							</div>
+							<div class="footer__links_col">
+								<h4>Где купить</h4>
+								<a href="#"><span>Категория 1</span></a>
+								<a href="#"><span>Категория 2</span></a>
+								<a href="#"><span>Lorem ipsum dolor sit amet, consectetur adipisicing</span></a>
+								<a href="#"><span>Категория 4</span></a>
+								<a href="#"><span>Категория 5</span></a>
+								<a href="#"><span>Категория 6</span></a>
+								<a href="#"><span>Категория 10</span></a>
+							</div>
+						</div>
+						<form class="footer__form _validate" action="/">
+							<p>Хотите первыми узнавать
+								о всех наших акциях
+								и горячих предложениях?</p>
+							<h5>Подпишитесь на рассылку!</h5>
+							<div class="g_input">
+								<input type="email" name="mail">
+								<span>Ваш email</span>
+								<svg class="g_input__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path class="g_input__path" d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg>
+							</div>
+							<button type="submit"><span class="g_btn"><span>отправить</span><svg class="g_btn__svg" viewBox="0 0 220 53.5" preserveAspectRatio="none"><path filter="url(#Filter_0)" class="g_btn__path" transform="translate(0 0)" d="M 12 6.25 C 44.5 6.25 77 6.25 109.5 6.25 C 142 6.25 174.5 6.25 207 6.25 C 210.866 6.25 214 9.384 214 13.25 L 214 27.25 C 213.91 32.25 213.91 32.25 214 41.25 C 214 45.116 210.866 48.25 207 48.25 C 174.5 48.25 142 48.25 109.5 48.25 C 77 48.25 44.5 48.25 12 48.25 C 8.134 48.25 5 45.116 5 41.25 C 5 35 5.05 31.71 5 26.75 C 4.95 21.79 5 18.25 5 13.25 C 5 9.384 8.134 6.25 12 6.25 Z"></path></svg></span></button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="footer__bot">
+				<div class="container">
+					<div class="footer__bot_body">
+						<h6>© 2009-2016 Ледек – Завод светодиодных светильников. Политика конфиденциальности</h6>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!--  svg helpers   -->
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0">
+			<defs>
+				<filter id="Filter_0">
+					<feOffset in="SourceAlpha" dx="1.638" dy="1.147" />
+					<feGaussianBlur result="blurOut" stdDeviation="1.4" />
+					<feFlood flood-color="rgb(181, 181, 181)" result="floodOut" />
+					<feComposite operator="atop" in="floodOut" in2="blurOut" />
+					<feComponentTransfer><feFuncA class="g_btn__filter" type="linear" slope="0.8"/></feComponentTransfer>
+					<feMerge>
+						<feMergeNode/>
+						<feMergeNode in="SourceGraphic"/>
+					</feMerge>
+				</filter>
+				<filter filterUnits="userSpaceOnUse" id="Filter_1" x="0px" y="0px" width="34px" height="38px"  >
+					<feOffset in="SourceAlpha" dx="3.277" dy="2.294" />
+					<feGaussianBlur result="blurOut" stdDeviation="2.828" />
+					<feFlood flood-color="rgb(134, 188, 66)" result="floodOut" />
+					<feComposite operator="atop" in="floodOut" in2="blurOut" />
+					<feComponentTransfer><feFuncA type="linear" slope="0.42"/></feComponentTransfer>
+					<feMerge>
+						<feMergeNode/>
+						<feMergeNode in="SourceGraphic"/>
+					</feMerge>
+				</filter>
+				<filter filterUnits="userSpaceOnUse" id="Filter_2" x="0px" y="0px" width="100%" >
+					<feOffset in="SourceAlpha" dx="1.638" dy="1.147" />
+					<feGaussianBlur result="blurOut" stdDeviation="4.472" />
+					<feFlood flood-color="rgb(44, 116, 255)" result="floodOut" />
+					<feComposite operator="atop" in="floodOut" in2="blurOut" />
+					<feComponentTransfer><feFuncA type="linear" slope="0.53"/></feComponentTransfer>
+					<feMerge>
+						<feMergeNode/>
+						<feMergeNode in="SourceGraphic"/>
+					</feMerge>
+				</filter>
+
+				<clipPath id="circle"><circle cx="0" cy="0" r="0"></circle></clipPath>
+				<clipPath id="preloader_circle"><circle cx="0" cy="81" r="5000"></circle></clipPath>
+			</defs>
+		</svg>
+		<!--    svg helpers     -->
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="vendor/jquery-3.1.1.min"><\/script>')</script>
+        <script src="vendor/swiper/js/swiper.min.js"></script>
+        <script src="vendor/anime.min.js"></script>
+        <script src="vendor/tilt.jquery.min.js"></script>
+        <script src="vendor/dropzone/dropzone.min.js"></script>
+		<script src="vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="vendor/lightgallery/js/lg-video.min.js"></script>
+        <script src="vendor/jquery.validate.min.js"></script>
+        <script src="js/main.js"></script>
+<!--		<script src="_trg.js"></script>-->
+    </body>
+</html>

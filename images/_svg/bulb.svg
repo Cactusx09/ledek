@@ -1,0 +1,53 @@
+<svg id="Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" width="105.05" height="157.95" viewBox="0 0 105.05 157.95">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e2ecf1;
+      }
+
+      .cls-2, .cls-5 {
+        fill: lime;
+      }
+
+      .cls-3 {
+        fill: #f1f2f2;
+      }
+
+      .cls-3, .cls-4 {
+        stroke: #000333;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+
+      .cls-5 {
+        stroke: #fff;
+        stroke-linecap: round;
+      }
+    </style>
+  </defs>
+  <title>bulb</title>
+  <g id="off">
+    <path class="cls-1" d="M55,129.55a51,51,0,0,0-51,51c0,23.29,29.09,47.23,31.93,64.85h38.2C77,227.85,106,203.91,106,180.58A51.06,51.06,0,0,0,55,129.55Z" transform="translate(-2.5 -128.05)"/>
+  </g>
+  <g id="on">
+    <path class="cls-2" d="M55,129.55a51,51,0,0,0-51,51c0,23.29,29.09,47.23,31.93,64.85h38.2C77,227.85,106,203.91,106,180.58A51.06,51.06,0,0,0,55,129.55Z" transform="translate(-2.5 -128.05)"/>
+  </g>
+  <g id="outline">
+    <path class="cls-3" d="M67.33,274.12H42.67a6.39,6.39,0,0,1-6.39-6.39v-22.3H73.76v22.3A6.42,6.42,0,0,1,67.33,274.12Z" transform="translate(-2.5 -128.05)"/>
+    <path class="cls-3" d="M60.41,284.51H49.59a2.81,2.81,0,0,1-2.8-2.8v-7.59H63.21v7.59A2.78,2.78,0,0,1,60.41,284.51Z" transform="translate(-2.5 -128.05)"/>
+    <line class="cls-4" x1="71.26" y1="131.72" x2="33.78" y2="131.72"/>
+    <path class="cls-4" d="M55,129.55a51,51,0,0,0-51,51c0,23.29,29.09,47.23,31.93,64.85h38.2C77,227.85,106,203.91,106,180.58A51.06,51.06,0,0,0,55,129.55Z" transform="translate(-2.5 -128.05)"/>
+  </g>
+  <g id="highlight">
+    <path class="cls-5" d="M82.75,159.84A50.79,50.79,0,0,0,64,144.74" transform="translate(-2.5 -128.05)"/>
+    <path class="cls-5" d="M89.9,172.59c-.32-.88-.72-1.76-1.08-2.6" transform="translate(-2.5 -128.05)"/>
+  </g>
+  <polyline class="cls-4" points="21.5 57.7 29.47 41.06 38.22 56.47 44.81 37.24 52.75 66.85 56.92 37.39 61.36 58.92 76.14 49.98 84 55.61"/>
+</svg>

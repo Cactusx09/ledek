@@ -1,0 +1,16 @@
+<svg id="Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" width="1920" height="60" viewBox="0 0 1920 60">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <title>Безымянный-2</title>
+  <g>
+    <path class="cls-1" d="M-.5.5v37s436,13,961,13c453,0,961-13,961-13l-2-37"/>
+    <path d="M-.5.5v37s436,13,961,13c453,0,961-13,961-13l-2-37"/>
+  </g>
+</svg>
