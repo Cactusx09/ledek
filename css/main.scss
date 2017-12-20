@@ -906,18 +906,19 @@ section{
 	}
 	label{
 		padding-left: 25px;
+		display: inline-block;
 		font-size: 16px;
 		font-weight: 300;
 		color: $d;
 		position: relative;
 		cursor: pointer;
 		user-select: none;
-		span{
-			transition: $t;
-		}
 		&:hover{
+			&:before{
+				border-color: $b;
+			}
 			span{
-				color: $d;
+				color: $b;
 			}
 		}
 		&:before{
@@ -928,7 +929,6 @@ section{
 			border: 1px solid #ddd;
 			left: 0;
 			top: 0px;
-			transition: $t;
 			border-radius: 0.125rem;
 		}
 		&:after{
@@ -2544,6 +2544,97 @@ article.g_txt{
 		small{
 			margin-left: 10px;
 			margin-right: 10px;
+		}
+	}
+}
+
+//catalog
+.s_catalog{
+	&__head{
+		background-color: #fff;
+		padding: 40px 0 35px;
+		margin-bottom: 60px;
+		&_filter{
+			margin-left: -15px;
+			margin-right: -15px;
+			@include flex(sb,fs);
+			>div{
+				&:not(:last-of-type){
+					margin-right: 50px;
+				}
+			}
+			.g_check{
+				margin-bottom: 10px;
+			}
+		}
+		&_col{
+			margin-left: 15px;
+			margin-right: 15px;
+			&Sub{
+				@include flex(sb,fs);
+				>div{
+					&:first-of-type{
+						margin-right: 40px;
+					}
+				}
+			}
+			h5{
+				color: $d;
+				font-size: 1.125rem;
+				margin-bottom: 20px;
+			}
+
+		}
+	}
+	&__row{
+		margin-bottom: 60px;
+		&_head{
+			@include flex(sb,c);
+			margin-bottom: 35px;
+			h2{
+				font-weight: 300;
+				color: $d;
+				font-size: 1.5rem;
+				text-transform: uppercase;
+			}
+		}
+	}
+	&__slider{
+		@include flex(sb,s);
+	}
+	&__item{
+		background-color: #fff;
+		border-radius: 1.3rem;
+		padding: 30px 30px 40px;
+		min-height: 100%;
+		@include flex(fs,fs,$d:c);
+		&_img{
+			height: 260px;
+			@include flex(c,c);
+			img{
+				max-width: 98%;
+				max-height: 98%;
+			}
+		}
+		h3{
+			margin-bottom: 16px;
+			color: $d;
+			font-size: 1.25rem;
+		}
+		hr{
+			margin: 30px 0;
+			width: 100%;
+			border: none;
+			border-bottom: 1px solid  #f6f6f6;
+		}
+		p{
+			line-height: 1.5;
+			font-weight: 300;
+			margin-bottom: 25px;
+		}
+		.g_link{
+			margin-top: auto;
+			padding-bottom: 3px;
 		}
 	}
 }

@@ -211,6 +211,18 @@ $(document).ready(function(){
 			}
 		});
 	}
+	if($('.s_catalog__row').length){
+		var sovleSlider = new Swiper('.s_catalog__row',{
+			spaceBetween: 30,
+			slidesPerView: 3,
+			loop: true,
+			autoHeight: true,
+			navigation: {
+				nextEl: '.s_catalog__arr_next',
+				prevEl: '.s_catalog__arr_prev',
+			}
+		});
+	}
 
 	//prevent only numbers
 	$('._num, input[name="phone"]').on('keydown',function(e){
