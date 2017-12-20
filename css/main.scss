@@ -169,6 +169,7 @@ $d: #333333;
 $b: #1875cc;
 $g: #0f0;
 $gr: #f9f9f9;
+$r: red;
 $t: .25s;
 
 /* ==========================================================
@@ -181,6 +182,11 @@ body,html{
 	color: $d;
 	background-color: $gr;
 	overflow-x: hidden;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
 }
 .container{
     max-width: 1330px;
@@ -684,9 +690,11 @@ section{
 	z-index: 0;
 	user-select: none;
 	margin: -5px;
+	padding-top: 2px;
 	span{
-		font-weight: 200;
+		font-weight: 300;
 		color: #fff;
+		letter-spacing: .5px;
 		font-size: 0.875rem;
 		text-transform: uppercase;
 	}
@@ -700,6 +708,16 @@ section{
 	}
 	&__path{
 		fill: $b;
+	}
+	&._outline{
+		span{
+			color: $b;
+			font-weight: 300;
+		}
+		.g_btn__path{
+			fill: transparent;
+			stroke: $b;
+		}
 	}
 }
 .g_link{
@@ -798,10 +816,10 @@ section{
 		}
 		&._error{
 			+span{
-				color: red !important;
+				color: $r !important;
 				+.g_input__svg{
 					path{
-						stroke: red !important;
+						stroke: $r !important;
 					}
 				}
 			}
@@ -852,9 +870,207 @@ section{
 		}
 	}
 	&._error{
-		border-color: red !important;
+		border-color: $r !important;
 		@include placeholder{
-			color: red;
+			color: $r;
+		}
+	}
+}
+.g_check{
+	input{
+		position: absolute;
+		left: -9999px;
+		transform: scale(0.0001);
+		font-size: 0.00001px;
+		opacity: 0;
+		visibility: hidden;
+		&:checked{
+			+label{
+				&:after{
+					opacity: 1;
+					transform: none;
+				}
+				&:before{
+					border-color: $b;
+					background-color: $b;
+				}
+			}
+		}
+		&._error{
+			+label{
+				&:before{
+					border-color: $r;
+				}
+			}
+		}
+	}
+	label{
+		padding-left: 25px;
+		font-size: 16px;
+		font-weight: 300;
+		color: $d;
+		position: relative;
+		cursor: pointer;
+		user-select: none;
+		span{
+			transition: $t;
+		}
+		&:hover{
+			span{
+				color: $d;
+			}
+		}
+		&:before{
+			content: '';
+			position: absolute;
+			width: 14px;
+			height: 14px;
+			border: 1px solid #ddd;
+			left: 0;
+			top: 0px;
+			transition: $t;
+			border-radius: 0.125rem;
+		}
+		&:after{
+			content: '';
+			position: absolute;
+			width: 14px;
+			height: 14px;
+			border: 1px solid transparent;
+			left: 0;
+			top: 0px;
+			opacity: 0;
+			transform: scale(0.5);
+			transition: $t/1.5;
+			border-radius: 0.125rem;
+			background-image: url('../images/ico/check.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+}
+.g_select{
+	position: relative;
+	z-index: 2;
+	user-select: none;
+	>small{
+		display: block;
+		margin-bottom: 0.5rem;
+		font-family: "Vodafone Lt";
+		font-weight: 400;
+		color: $g;
+		font-size: 0.875rem;
+	}
+	&._active{
+		z-index: 4;
+		.g_select{
+			&__head{
+				border-color: $b;
+				i{
+					transform: rotate(180deg);
+				}
+			}
+			&__body{
+				opacity: 1;
+				transform: none;
+				visibility: visible;
+				max-height: 200px;
+			}
+		}
+	}
+	&._error{
+		.g_select{
+			&__head{
+				border-color: $r;
+				color: $r;
+				path{
+					fill: $r;
+				}
+			}
+		}
+	}
+	&__head{
+		transition: $t;
+		position: relative;
+		z-index: 100;
+		cursor: pointer;
+		@include flex(sb,c);
+		width: 100%;
+		font-weight: 300;
+		color: $d;
+		font-size: 1rem;
+		input{
+			position: absolute;
+			transform: scale(0);
+			opacity: 0;
+			visibility: hidden;
+			z-index: -1;
+			left: -9999px;
+		}
+		i{
+			transition: $t;
+			margin-left: 15px;
+		}
+		path{
+			transition: $t;
+		}
+		span{
+			transition: $t;
+		}
+	}
+	&__body{
+		position: absolute;
+		top: 100%;
+		border-radius: 1.2rem;
+		left: 0;
+		min-width: 250px;
+		width: 100%;
+		background-color: #fff;
+		z-index: 99;
+		box-shadow: 0 0.437rem 1.188rem rgba(31, 32, 29, 0.5);
+		transition: $t;
+		opacity: 0;
+		visibility: hidden;
+		text-align: left;
+		margin-top: 10px;
+		max-height: 0;
+		._scroll{
+			height: 200px;
+			padding-left: 20px;
+		}
+		.simplebar-track{
+			z-index: 99999;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			.simplebar-scrollbar{
+				right: 6px;
+				&.visible{
+					opacity: 0.5;
+				}
+				&:active,
+				&:hover{
+					width: 10px;
+				}
+			}
+		}
+		a{
+			display: block;
+			color: $d;
+			font-size: 1.0rem;
+			margin-bottom: 15px;
+			font-weight: 300;
+			@include h_left();
+			&._current{
+				color: $b;
+				cursor: default;
+				pointer-events: none;
+			}
+			&:first-of-type{
+				margin-top: 20px;
+			}
+			&:last-of-type{
+				margin-bottom: 20px;
+			}
 		}
 	}
 }
@@ -881,6 +1097,9 @@ section{
 			margin-right: 5px;
 		}
 	}
+}
+.g_more{
+	text-align: center;
 }
 .g_upload{
 	width: 315px;
@@ -966,7 +1185,7 @@ section{
 			color: #000;
 			&:hover{
 				opacity: 1;
-				color: red;;
+				color: $r;
 			}
 		}
 	}
@@ -977,6 +1196,7 @@ section{
 		padding-top: 40px;
 	}
 }
+
 
 .g_txt{
 	hr{
@@ -1162,7 +1382,7 @@ section{
 				&._error{
 					+.g_input__svg{
 						path{
-							stroke: red !important;
+							stroke: $r !important;
 						}
 					}
 				}
@@ -1179,7 +1399,7 @@ section{
 			cursor: pointer;
 			margin-left: auto;
 			path{
-				fill: red;
+				fill: $r;
 			}
 		}
 	}
@@ -1986,11 +2206,129 @@ section{
 	padding: 40px 0;
 }
 
+//blog.html
+.s_blog{
+	&__head{
+		background-color: #fff;
+		padding: 25px 0;
+		margin-bottom: 60px;
+		&_filter{
+			@include flex(fs,c);
+			>div{
+				&:not(:last-of-type){
+					margin-right: 50px;
+				}
+			}
+		}
+	}
+	&__body{
+		@include flex(sb,s,$w:w);
+	}
+	&__item{
+		width: calc(50% - 15px);
+		margin-bottom: 60px;
+		cursor: default;
+		&_img{
+			width: 100%;
+			padding-bottom: 48%;
+			border-radius: 1.3rem;
+			overflow: hidden;
+			position: relative;
+			display: block;
+			margin-bottom: 30px;
+			cursor: pointer;
+			&:hover{
+				span{
+					transform: scale(1.08);
+				}
+			}
+			span{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				display: block;
+				transition: $t;
+				border-radius: 1.3rem;
+			}
+		}
+		h3{
+			margin-bottom: 15px;
+			cursor: pointer;
+			position: relative;
+			color: $d;
+			font-size: 1.25rem;
+			text-transform: uppercase;
+			@include flex(sb,c);
+			span{
+				transition: $t;
+				line-height: 1.2;
+				padding-bottom:5px;
+			}
+			small{
+				color: #9a9999;
+				font-size: 1rem;
+				margin-left: 30px;
+			}
+			&:hover{
+				span{
+					text-shadow: 1px 0px 0px $g;
+				}
+			}
+		}
+		p{
+			line-height: 1.5;
+			font-weight: 300;
+			color: $d;
+			font-size: 1rem;
+			margin-bottom: 15px;
+		}
+		.g_link{
+			display: inline-block;
+		}
+	}
+	.g_more{
+		margin-top: -5px;
+		margin-bottom: 5px;
+	}
+}
+
 /* ==========================================================
    _inner
    ========================================================== */
 
 
+.simplebar-track{
+	z-index: 99999;
+	.simplebar-scrollbar{
+		background: $gr;
+		opacity: 1;
+		border-radius: 3px;
+		right: 4px;
+		z-index: 99999;
+		border: 1px solid  $d;
+		transition: opacity 0.15s linear, width $t;
+		&.visible{
+			opacity: 0.5;
+		}
+		&:hover{
+			background-color: $d;
+		}
+		&:active,
+		&:hover{
+			width: 14px;
+			opacity: 0.8 !important;
+		}
+		&:active{
+			background-color: $d;
+			opacity: 1 !important;
+		}
+	}
+}
 
 /* ==========================================================
    _responsive
@@ -2060,26 +2398,6 @@ section{
    _other
    ========================================================== */
 
-::-webkit-scrollbar{
-	width: 11px;
-	height: 11px;
-	&-track{
-		background-color: #fdfdfd;
-		border-left: 1px solid #ddd;
-	}
-	&-thumb{
-		background: $d;
-		border-left: 1px solid transparent;
-		border-left-color: $g;
-		&:hover{
-			background-color: $d;
-			border-color: $g;
-		}
-		&:active{
-			background-color: darken(#000,15);
-		}
-	}
-}
 
 /* ==========================================================
    _print

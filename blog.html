@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ru"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>LEDEK - Сервисы</title>
+		<title>LEDEK - Блог экспертов</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,7 @@
 
         <script src="vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
-	<body id="wrp">
+    <body id="wrp">
         <!--[if lt IE 8]>
             <p class="browserupgrade">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите ваш браузер</a></p>
         <![endif]-->
@@ -79,49 +79,89 @@
 			</div>
 			<svg class="header__animation" xmlns="http://www.w3.org/2000/svg" width="1920" height="65" viewBox="0 0 1920 60" preserveAspectRatio="none"><path class="header__animation_path" d="M -0.5 0.5 L -0.5 42.5 C 319.75 42.5 640 42.5 960.25 42.5 C 1280.5 42.5 1600.75 42.5 1921 42.5 L 1919.5 0.5"/></svg>
 		</header>
-     	<section class="g_head">
+		<section class="g_head">
 			<div class="container">
-				<h1 class="g_title">Решения для различных сфер</h1>
+				<h1 class="g_title">Блог экспертов</h1>
 			</div>
-     	</section>
-		<section class="s_services" style="background-color: #fff">
+		</section>
+		<section class="s_blog">
+			<div class="s_blog__head">
+				<div class="container">
+					<div class="s_blog__head_filter">
+						<div class="g_check">
+							<input type="checkbox" id="c1" name="sort_best">
+							<label for="c1"><span>По популярности</span></label>
+						</div>
+						<div class="g_check">
+							<input type="checkbox" id="c2" name="sort_news">
+							<label for="c2"><span>Новые записи</span></label>
+						</div>
+						<div class="g_select">
+							<div class="g_select__head">
+								<input type="text" name="address">
+								<span>По автору</span>
+								<i><svg xmlns="http://www.w3.org/2000/svg" width="11" height="6"><path d="M11 1.1L9.7 0 5.5 3.7 1.3 0 0 1.1 5.5 6 11 1.1Z" fill="rgb(24, 117, 204)"/></svg></i>
+							</div>
+							<div class="g_select__body">
+								<div class="_scroll">
+									<a href="#"><span>Автор 1</span></a>
+									<a href="#"><span>Автор 2</span></a>
+									<a href="#"><span>Автор 3</span></a>
+									<a href="#"><span>Автор 7</span></a>
+									<a href="#"><span>Автор 16</span></a>
+									<a href="#"><span>Автор 16</span></a>
+									<a href="#"><span>Автор 16</span></a>
+									<a href="#"><span>Автор 16</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="container">
-				<div class="s_services__body">
-					<a class="s_services__item" href="#">
-						<div class="s_services__item_img"><span style="background-image: url('images/services/1.jpg')"></span></div>
-						<h3 class="g_title"><span>Магистральное освещение</span></h3>
+				<div class="s_blog__body">
+					<a class="s_blog__item" href="#">
+						<div class="s_blog__item_img"><span style="background-image: url('images/services/1.jpg')"></span></div>
+						<h3><span>Безусловная гарантия 5 лет!</span><small>21.01.2016</small></h3>
+						<p>Замена и доставка без условий и полностью за НАШ СЧЕТ! Что значит гарантия 5 лет без условий? Вышедший из строя светильник меняем на новый. Отправляем на следующий день по Вашей заявке. Все расходы по логистике за наш счет. Все этипривилегии в нашем стандартном договоре.</p>
 						<div class="g_link"><span>смотреть подробнее</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></div>
 					</a>
-					<a class="s_services__item" href="#">
-						<div class="s_services__item_img" href="#"><span style="background-image: url('images/services/2.jpg')"></span></div>
-						<h3 class="g_title"><span>Освещение АЗС</span></h3>
-						<div href="#" class="g_link"><span>смотреть подробнее</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></div>
+					<a class="s_blog__item" href="#">
+						<div class="s_blog__item_img"><span style="background-image: url('images/services/2.jpg')"></span></div>
+						<h3><span>Безусловная гарантия 5 лет!</span><small>21.01.2016</small></h3>
+						<p>Замена и доставка без условий и полностью за НАШ СЧЕТ! Что значит гарантия 5 лет без условий? Вышедший из строя светильник меняем на новый. Отправляем на следующий день по Вашей заявке. Все расходы по логистике за наш счет. Все этипривилегии в нашем стандартном договоре.</p>
+						<div class="g_link"><span>смотреть подробнее</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></div>
 					</a>
-					<a class="s_services__item" href="#">
-						<div class="s_services__item_img" href="#"><span style="background-image: url('images/services/3.jpg')"></span></div>
-						<h3 class="g_title"><span>Освещение спортивных объектов</span></h3>
-						<div href="#" class="g_link"><span>смотреть подробнее</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></div>
+					<a class="s_blog__item" href="#">
+						<div class="s_blog__item_img"><span style="background-image: url('images/services/3.jpg')"></span></div>
+						<h3><span>Безусловная гарантия 5 лет!</span><small>21.01.2016</small></h3>
+						<p>Замена и доставка без условий и полностью за НАШ СЧЕТ! Что значит гарант за наш счет. Все этипривилегии в нашем стандартном договоре.</p>
+						<div class="g_link"><span>смотреть подробнее</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></div>
 					</a>
-					<a class="s_services__item" href="#">
-						<div class="s_services__item_img" href="#"><span style="background-image: url('images/services/4.jpg')"></span></div>
-						<h3 class="g_title"><span>Промышленное освещение</span></h3>
-						<div href="#" class="g_link"><span>смотреть подробнее</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></div>
+					<a class="s_blog__item" href="#">
+						<div class="s_blog__item_img"><span style="background-image: url('images/services/6.jpg')"></span></div>
+						<h3><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nobis.</span><small>21.01.2016</small></h3>
+						<p>Замена и доставка без условий и полностью за НАШ СЧЕТ! Что значит гарантия 5 лет без условий? Вышедший из строя светильник меняем на новый. Отправляем на следующий день по Вашей заявке. Все расходы по логистике за наш счет. Все этипривилегии в нашем стандартном договоре.</p>
+						<div class="g_link"><span>смотреть подробнее</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></div>
 					</a>
-					<a class="s_services__item" href="#">
-						<div class="s_services__item_img" href="#"><span style="background-image: url('images/services/5.jpg')"></span></div>
-						<h3 class="g_title"><span>Торговое освещение</span></h3>
-						<div href="#" class="g_link"><span>смотреть подробнее</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></div>
+					<a class="s_blog__item" href="#">
+						<div class="s_blog__item_img"><span style="background-image: url('images/services/5.jpg')"></span></div>
+						<h3><span>Безусловная гарантия 5 лет!</span><small>21.01.2016</small></h3>
+						<p>Замена и доставка без условий и полностью за НАШ СЧЕТ! Что значит гарантия 5 лет без условий? Вышедший из строя светильник меняем на новый. Отправляем на следующий день по Вашей заявке. Все расходы по логистике за наш счет. Все этипривилегии в нашем стандартном договоре.</p>
+						<div class="g_link"><span>смотреть подробнее</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></div>
 					</a>
-					<a class="s_services__item" href="#">
-						<div class="s_services__item_img" href="#"><span style="background-image: url('images/services/6.jpg')"></span></div>
-						<h3 class="g_title"><span>Уличное и парковое освещение</span></h3>
-						<div href="#" class="g_link"><span>смотреть подробнее</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></div>
+					<a class="s_blog__item" href="#">
+						<div class="s_blog__item_img"><span style="background-image: url('images/services/3.jpg')"></span></div>
+						<h3><span>Безусловная гарантия 5 лет!</span><small>21.01.2016</small></h3>
+						<p>Замена и доставка без условий и полностью за НАШ СЧЕТ! Что значит гарантия 5 лет без условий? Вышедший из строя светильник меняем на новый. Отправляем на следующий день по Вашей заявке. Все расходы по логистике за наш счет. Все этипривилегии в нашем стандартном договоре.</p>
+						<div class="g_link"><span>смотреть подробнее</span><svg class="g_link__svg" width="300" height="15" viewBox="0 0 300 15" preserveAspectRatio="none"><path stroke="rgb(44, 116, 255)" class="g_link__path"  d="M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5"/></svg></div>
 					</a>
+				</div>
+				<div class="g_more">
+					<a href="#" class="g_btn _outline"><span>Показать еще</span><svg class="g_btn__svg" viewBox="0 0 220 53.5" preserveAspectRatio="none"><path filter="url(#Filter_0)" class="g_btn__path" transform="translate(0 0)" d="M 12 6.25 C 44.5 6.25 77 6.25 109.5 6.25 C 142 6.25 174.5 6.25 207 6.25 C 210.866 6.25 214 9.384 214 13.25 L 214 27.25 C 213.91 32.25 213.91 32.25 214 41.25 C 214 45.116 210.866 48.25 207 48.25 C 174.5 48.25 142 48.25 109.5 48.25 C 77 48.25 44.5 48.25 12 48.25 C 8.134 48.25 5 45.116 5 41.25 C 5 35 5.05 31.71 5 26.75 C 4.95 21.79 5 18.25 5 13.25 C 5 9.384 8.134 6.25 12 6.25 Z"></path></svg></a>
 				</div>
 			</div>
 		</section>
-
-
 		<section class="s_form">
 			<div class="container">
 				<form class="g_form _validate" action="/">
@@ -141,6 +181,7 @@
 				</form>
 			</div>
 		</section>
+
 		<footer class="footer">
 			<div class="footer__top">
 				<div class="container">
@@ -230,7 +271,6 @@
 				</div>
 			</div>
 		</footer>
-
 		<!--  svg helpers   -->
 		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" style="position: absolute; left:-100vw; top:-100vh;">
 			<defs>

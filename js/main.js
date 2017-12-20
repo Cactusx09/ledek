@@ -2,6 +2,8 @@ $(document).ready(function(){
 	var ww = $(window).outerWidth(),
 		wv = +$(window).outerHeight();
 
+	var scrollBar = new SimpleBar($('#wrp')[0]),
+		scrollContent = $('#wrp').find('.simplebar-scroll-content');
 
 	$('.g_preloader, .header__logo i').remove();
 	//preloader
@@ -128,11 +130,11 @@ $(document).ready(function(){
 			opacity: 1
 		});
 	}
-	$(window).on("wheel mousewheel", function(e){
-		if(!done){
-			return false;
-		}
-	});
+//	$(window).on("wheel mousewheel", function(e){
+//		if(!done){
+//			return false;
+//		}
+//	});
 
 	//sliders
 	if($('.s_slider__slider').length){
@@ -215,6 +217,36 @@ $(document).ready(function(){
 		-1!==$.inArray(e.keyCode,[46,8,9,27,13,110,190])||/65|67|86|88/.test(e.keyCode)&&(!0===e.ctrlKey||!0===e.metaKey)||35<=e.keyCode&&40>=e.keyCode||(e.shiftKey||48>e.keyCode||57<e.keyCode)&&(96>e.keyCode||105<e.keyCode)&&e.preventDefault()
 	});
 
+	//selects
+	$('.g_select__head').click(function(e){
+		var el = $(this),
+			select = $('.g_select'),
+			scrollContainer = select.find('.simplebar-scroll-content');
+		if(!select.hasClass('_active')){
+			scrollContainer.scrollTop(0);
+		}
+		select.toggleClass('_active');
+
+	});
+	$('.g_select__body a').click(function(e){
+		e.preventDefault();
+		var a = $(this),
+			txt = a.text(),
+			select = a.closest('.g_select'),
+			input = select.find('input'),
+			head = select.find('.g_select__head span');
+		a.addClass('_current').siblings().removeClass('_current');
+		input.val(txt);
+		head.text(txt);
+		select.removeClass('_error _active');
+
+	});
+
+	//g_txt
+	if($('.g_txt table').length){
+		$('.g_txt table').wrap('<div class="g_txt__table"></div>');
+	}
+
 	//inputs
 	$('input,textarea').change(function(){
 		if($(this).val()==''){
@@ -223,6 +255,13 @@ $(document).ready(function(){
 			$(this).addClass('_active');
 		}
 	});
+
+	//scrolls
+	if($('._scroll').length){
+		$('._scroll').each(function(){
+			var scroll = new SimpleBar($(this)[0]);
+		});
+	}
 
 	//anchors
 	$('._anchor').click(function(e){
@@ -234,7 +273,7 @@ $(document).ready(function(){
 		}else{
 			px = $('.'+el).offset().top;
 		}
-		$('body,html').stop().animate({scrollTop:px},500);
+		scrollContent.stop().animate({scrollTop:px},500);
 	});
 
 	////forms
