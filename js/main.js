@@ -83,7 +83,7 @@ $(document).ready(function(){
 
 	header.wrap(elString);
 	var headerAnimDone = false;
-	$(window).scroll(function(){
+	scrollContent.scroll(function(){
 		if($(this).scrollTop() > 1000){
 			if(!header.hasClass('_fixed')){
 				header.addClass('_fixed');
