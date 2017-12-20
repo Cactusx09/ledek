@@ -971,6 +971,12 @@ section{
 		}
 	}
 }
+.g_head{
+	padding: 40px 0;
+	+.s_services{
+		padding-top: 40px;
+	}
+}
 
 .g_txt{
 	hr{
