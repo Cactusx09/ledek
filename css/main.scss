@@ -1192,7 +1192,7 @@ section{
 }
 .g_head{
 	padding: 40px 0;
-	+.s_services{
+	+.s_category{
 		padding-top: 40px;
 	}
 }
@@ -2031,7 +2031,7 @@ article.g_txt{
 		width: 48%;
 	}
 }
-.s_services{
+.s_category{
 	padding: 90px 0 40px;
 	&__body{
 		@include flex(sb,s,$w:w);
@@ -2258,14 +2258,14 @@ article.g_txt{
 	}
 }
 
-//desc.html
-.s_descImg{
+//cases-item.html
+.s_caseImg{
 	height: 540px;
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
-.s_desc{
+.s_case{
 	padding: 55px 0;
 	background-color: #fff;
 	h1{

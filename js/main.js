@@ -368,7 +368,7 @@ $(document).ready(function(){
 	}());
 
 	//uload zone
-	var uploadForm = $('.s_services__form');
+	var uploadForm = $('.s_category__form');
 	if(uploadForm.length){
 		uploadForm.dropzone({
 			url: "/",
