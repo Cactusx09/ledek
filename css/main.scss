@@ -1196,6 +1196,37 @@ section{
 		padding-top: 40px;
 	}
 }
+.g_tabs{
+	&__head{
+		@include flex(fs,c);
+		margin-bottom: 25px;
+		a{
+			font-weight: 300;
+			color: $d;
+			font-size: 1rem;
+			transition: $t;
+			min-height: 30px;
+			span{
+				padding-bottom: 9px;
+				border-bottom: 2px dashed rgba(151, 151, 151, 0.53);
+			}
+			&:not(:last-of-type){
+				margin-right: 50px;
+			}
+			&._current{
+				color: #000;
+				cursor: default;
+				pointer-events: none;
+				font-size: 1.25rem;
+				text-transform: uppercase;
+				span{
+					padding-bottom: 4px;
+					border-bottom: 3px solid  $b;
+				}
+			}
+		}
+	}
+}
 
 .g_txt{
 	>:last-child{
@@ -2548,7 +2579,7 @@ article.g_txt{
 	}
 }
 
-//catalog
+//catalog.html
 .s_catalog{
 	&__head{
 		background-color: #fff;
@@ -2635,6 +2666,230 @@ article.g_txt{
 		.g_link{
 			margin-top: auto;
 			padding-bottom: 3px;
+		}
+	}
+}
+
+//catalog-item.html
+.s_catalMain{
+	background-color: #fff;
+	&__body{
+		@include flex(sb,c);
+	}
+	&__left{
+		max-width: 540px;
+		width: 100%;
+		margin-right: 50px;
+		margin-left: 0;
+		padding: 50px 0;
+	}
+	&__img{
+		&_slider{
+			width: 100%;
+		}
+		&_item{
+			width: 100%;
+			height: 325px;
+			border-radius: 1.3rem;
+			padding: 20px;
+			border: 1px solid #e9e9e9;
+			@include flex(c,c);
+			img{
+				max-width: 98%;
+				max-height: 98%;
+			}
+		}
+	}
+	&__thumb{
+		margin-top: 10px;
+		&_slider{
+			width: 100%;
+		}
+		&_item{
+			height: 100px;
+			@include flex(c,c);
+			border-radius: 1.3rem;
+			padding: 10px;
+			transition: $t;
+			border: 1px solid #e9e9e9;
+			&.swiper-slide-active{
+				border-color: $b;
+				img{
+					opacity: 1;
+				}
+			}
+			img{
+				max-width: 98%;
+				max-height: 98%;
+				opacity: 0.7;
+				transition: $t;
+			}
+		}
+	}
+
+	&__right{
+		flex-grow: 2;
+		margin-bottom: 15px;
+	}
+	&__head{
+		@include flex(sb,c);
+		h2{
+			font-weight: 300;
+			color: $d;
+			font-size: 1.5rem;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+		}
+		p{
+			line-height: 1.5;
+			font-weight: 300;
+			color: $d;
+			font-size: 1rem;
+		}
+		.g_btn{
+			margin-left: 40px;
+		}
+	}
+	&__info{
+		@include flex(sb,c,$w:w);
+		margin: 0 -15px 10px;
+		hr{
+			border: none;
+			width: 21px;
+			border-bottom: 2px solid  $d;
+			margin: 15px 0;
+		}
+		&_item{
+			margin-left: 15px;
+			margin-right: 15px;
+			margin-bottom: 15px;
+			>div,p{
+				@include flex(fs,c);
+			}
+			>div{
+				>span{
+					font-weight: 400;
+					color: $d;
+					font-size: 1.1rem;
+				}
+			}
+			p{
+				span{
+					font-weight: 400;
+					color: $d;
+					font-size: 1.1rem;
+				}
+				small{
+					font-weight: 400;
+					color: $d;
+					font-size: 0.875rem;
+					margin-left: 20px;
+				}
+			}
+			.g_select{
+				margin-left: 15px;
+				&__head{
+					border: 1px solid  #ddd;
+					border-radius: 0.125rem;
+					padding: 6px 10px;
+				}
+				&__body{
+					border-radius: 0.125rem;
+				}
+			}
+		}
+	}
+	&__table{
+		border-radius: 1.3rem;
+		border: 1px solid  #e9e9e9;
+		table{
+			width: 100%;
+		}
+		tbody{
+			tr{
+				&:nth-of-type(2n+1){
+					background-color: $gr;
+				}
+			}
+		}
+		th{
+			font-weight: 400;
+			color: $d;
+			font-size: 0.75rem;
+			padding: 5px;
+			vertical-align: middle;
+			span{
+				position: relative;
+			}
+			&:not(:last-of-type){
+				span{
+					display: block;
+					&:before{
+						content: '';
+						position: absolute;
+						height: 20px;
+						width: 1px;
+						right: -5px;
+						top: 50%;
+						margin-top: -10px;
+						background-color: #ddd;
+					}
+				}
+			}
+		}
+		td{
+			color: $d;
+			padding: 7px 15px;
+			&:first-of-type{
+				font-size: 1rem;
+				padding-left: 25px;
+			}
+			&:not(:first-of-type){
+				font-weight: 500;
+				text-align: center;
+				color: $d;
+				font-size: 1.125rem;
+			}
+		}
+	}
+}
+.s_catalInfo{
+	padding: 50px 0;
+}
+.s_catalItems{
+	background-color: #fff;
+	padding: 50px 0 65px;
+	&__body{
+		@include flex(fs,s,$w:w);
+		margin: -15px;
+	}
+	&__item{
+		width: calc(50% - 30px);
+		margin: 15px;
+		@include flex(fs,s,$d:c);
+		h3{
+			font-weight: 300;
+			color: #000;
+			font-size: 1.25rem;
+			text-transform: uppercase;
+			margin-bottom: 20px;
+		}
+		&_img{
+			border: 1px solid  #e9e9e9;
+			border-radius: 1.3rem;
+			background-color: #fff;
+			padding: 15px;
+			min-height: 315px;
+			max-height: 450px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			@include flex(c,c);
+			height: 100%;
+			img{
+				max-width: 98%;
+				max-height: 98%;
+			}
 		}
 	}
 }
@@ -2758,6 +3013,7 @@ article.g_txt{
 .s_catSolve{
 	background-color: #fff;
 }
+
 
 /* ==========================================================
    _inner

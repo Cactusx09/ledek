@@ -223,6 +223,24 @@ $(document).ready(function(){
 			}
 		});
 	}
+	if($('.s_catalMain').length){
+		var catalTop = new Swiper('.s_catalMain__img', {
+				spaceBetween: 10,
+				slidesPerView: 1,
+				autoHeight: false,
+				effect: 'flip'
+			}),
+			catalThumbs = new Swiper('.s_catalMain__thumb', {
+				spaceBetween: 10,
+				centeredSlides: true,
+				slidesPerView: 5,
+				touchRatio: 0.2,
+				slideToClickedSlide: true,
+				autoHeight: false
+			});
+		catalTop.controller.control = catalThumbs;
+		catalThumbs.controller.control = catalTop;
+	}
 
 	//prevent only numbers
 	$('._num, input[name="phone"]').on('keydown',function(e){
@@ -287,6 +305,31 @@ $(document).ready(function(){
 		}
 		scrollContent.stop().animate({scrollTop:px},500);
 	});
+
+	//tabs
+
+	if($('.g_tabs').length){
+		$('.g_tabs').each(function(el){
+			var el = $(this);
+			var tabsSlider = new Swiper(el,{
+				spaceBetween: 30,
+				slidesPerView: 1,
+				autoHeight: true,
+				speed: 500,
+				on:{
+					slideChange: function(){
+						var n = this.realIndex;
+						el.find('.g_tabs__head a').eq(n).addClass('_current').siblings().removeClass('_current');
+					}
+				}
+			});
+			el.find('.g_tabs__head a').click(function(e){
+				e.preventDefault();
+				tabsSlider.slideTo($(this).index());
+			});
+		});
+
+	}
 
 	////forms
 	//validate
