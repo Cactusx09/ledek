@@ -2398,7 +2398,7 @@ article.g_txt{
 						border: none;
 						padding:  7px 10px 4px;
 						height: 40px;
-						@include flex(c,c);
+						@include flex(sb,c);
 						&._current{
 							text-transform: none;
 							background-color: $b;
@@ -2407,7 +2407,7 @@ article.g_txt{
 							border-radius: 0.625rem;
 						}
 						&:not(:last-of-type){
-							margin-right: 20px;
+							margin-right: auto;
 						}
 						span{
 							border: none;
