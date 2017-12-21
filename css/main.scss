@@ -965,6 +965,78 @@ section{
 		}
 	}
 }
+.g_radio{
+	input{
+		position: absolute;
+		left: -9999px;
+		transform: scale(0.0001);
+		font-size: 0.00001px;
+		opacity: 0;
+		visibility: hidden;
+		&:checked{
+			+label{
+				&:after{
+					opacity: 1;
+					transform: scale(.5);
+				}
+				&:before{
+					border-color: $b;
+					background-color: $b;
+				}
+			}
+		}
+		&._error{
+			+label{
+				&:before{
+					border-color: $r;
+				}
+			}
+		}
+	}
+	label{
+		padding-left: 25px;
+		display: inline-block;
+		font-size: 16px;
+		font-weight: 300;
+		color: $d;
+		position: relative;
+		cursor: pointer;
+		user-select: none;
+		&:hover{
+			&:before{
+				border-color: $b;
+			}
+			span{
+				color: $b;
+			}
+		}
+		&:before{
+			content: '';
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			border: 1px solid #ddd;
+			left: 0;
+			top: 0px;
+			border-radius: 50%;
+			transition: $t;
+		}
+		&:after{
+			content: '';
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			border: 1px solid transparent;
+			left: 0;
+			top: 0px;
+			opacity: 0;
+			transform: scale(0.5);
+			transition: $t;
+			border-radius: 50%;
+			background-color: #fff;
+		}
+	}
+}
 .g_select{
 	position: relative;
 	z-index: 2;
@@ -2305,6 +2377,88 @@ article.g_txt{
 	}
 }
 
+//cases.html
+.s_cases{
+	&__head{
+		background-color: #fff;
+		padding: 40px 0 35px;
+		margin-bottom: 60px;
+		&_filter{
+			margin-left: -15px;
+			margin-right: -15px;
+			@include flex(sb,fs);
+			.g_tabs{
+				&__head{
+					border: 1px solid  #e9e9e9;
+					border-radius: .625rem;
+					a{
+						font-weight: 300;
+						color: $d;
+						font-size: 0.875rem;
+						border: none;
+						padding:  7px 10px 4px;
+						height: 40px;
+						@include flex(c,c);
+						&._current{
+							text-transform: none;
+							background-color: $b;
+							color: #fff;
+							box-shadow: 0.188rem 0.125rem 0.438rem 0.063rem rgba(24, 117, 204, 0.42);
+							border-radius: 0.625rem;
+						}
+						&:not(:last-of-type){
+							margin-right: 20px;
+						}
+						span{
+							border: none;
+							padding-bottom: 4px;
+						}
+					}
+				}
+			}
+			>div{
+				&:not(:last-of-type){
+					margin-right: 50px;
+				}
+			}
+			.g_check{
+				margin-bottom: 10px;
+				width: 200px;
+			}
+			.g_radio{
+				margin-bottom: 12px;
+			}
+		}
+		&_col{
+			margin-left: 15px;
+			margin-right: 15px;
+			&Slider{
+				max-width: 550px;
+			}
+			h5{
+				color: $d;
+				font-size: 1.125rem;
+				margin-bottom: 20px;
+			}
+
+		}
+		.g_tabs{
+			&__body{
+
+			}
+			&__item{
+				@include flex(fs,sb,$w:w);
+				.g_check{
+					width: 137px;
+				}
+			}
+		}
+	}
+	.g_more{
+		margin-top: 45px;
+	}
+}
+
 //cases-item.html
 .s_caseImg{
 	height: 540px;
@@ -2389,11 +2543,13 @@ article.g_txt{
 		margin-bottom: 30px;
 	}
 	&__body{
-		@include flex(sb,s,$w:w);
+		@include flex(fs,s,$w:w);
+		margin: -25px;
 	}
 	&__item{
-		width: calc(25% - 15px);
+		width: calc(25% - 30px);
 		cursor: default;
+		margin: 15px 15px 20px;
 		&_img{
 			width: 100%;
 			padding-bottom: 57%;

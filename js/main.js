@@ -318,7 +318,7 @@ $(document).ready(function(){
 		$('.g_tabs').each(function(el){
 			var el = $(this);
 			var tabsSlider = new Swiper(el,{
-				spaceBetween: 30,
+				spaceBetween: 70,
 				slidesPerView: 1,
 				autoHeight: true,
 				speed: 500,
