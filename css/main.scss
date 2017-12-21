@@ -199,7 +199,23 @@ body,html{
 section{
 
 }
-
+#wrp{
+	&.active{
+		>.simplebar-track.vertical{
+			opacity: 1;
+		}
+	}
+	>.simplebar-content{
+		overflow: hidden;
+	}
+	>.simplebar-track.horizontal,
+	>.simplebar-track.vertical{
+		opacity: 0;
+	}
+	>.simplebar-track.horizontal{
+		overflow: hidden;
+	}
+}
 
 
 @mixin flex($justify:fs,$align:fs,$d:null,$i:false,$w:false){
@@ -3012,6 +3028,96 @@ article.g_txt{
 }
 .s_catSolve{
 	background-color: #fff;
+}
+
+//services-item.html
+.s_service{
+	&__item{
+		padding: 60px 0;
+		&:nth-of-type(2n){
+			background-color: #fff;
+			.s_service{
+				&__icon{
+					background-color: #fff;
+				}
+			}
+		}
+		&._left{
+			.s_service{
+				&__icon{
+					margin-right: 90px;
+				}
+				&__txt{
+					margin-right: 40px;
+				}
+			}
+		}
+		&._right{
+			.s_service{
+				&__icon{
+					margin-right: 90px;
+				}
+
+				&__img{
+					margin-right: 20px;
+				}
+				&__txt{
+					margin-left: auto;
+					margin-right: auto;
+				}
+			}
+		}
+	}
+	&__body{
+		@include flex(sb,c);
+		min-height: 350px;
+	}
+	&__icon{
+		min-width: 70px;
+		height: 70px;
+		border-radius: 50%;
+		border: 1px solid  $b;
+		@include flex(c,c);
+		position: relative;
+		background-color: $gr;
+		&_line{
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			margin-top: 2px;
+			width: 1px;
+			display: inline-block;
+			background-color: #e8e8e8;
+			height: 250px;
+		}
+	}
+	&__txt{
+		flex-grow: 2;
+		max-width: 50%;
+		h2{
+			font-weight: 300;
+			color: $d;
+			font-size: 1.625rem;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+			+p{
+				font-weight: 300;
+				color: $d;
+				font-size: 1.125rem;
+			}
+		}
+		ul{
+			margin-top: -20px;
+		}
+	}
+	&__img{
+		width: 400px;
+		height: 350px;
+		img{
+			max-width: 98%;
+			max-height: 98%;
+		}
+	}
 }
 
 
