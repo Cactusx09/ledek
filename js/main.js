@@ -5,76 +5,76 @@ $(document).ready(function(){
 	var scrollBar = new SimpleBar($('#wrp')[0]),
 		scrollContent = $('#wrp').find('.simplebar-scroll-content');
 
-	$('.g_preloader, .header__logo i').remove();
-//	//preloader
-//	anime({
-//		targets: '.fancy-bulb',
-//		translateY: [55,0],
-//		rotate: [-180,-180],
-//		elasticity: 750,
-//		duration: 2515
-//	});
-//	var preloadAnimation = anime({
-//		targets: '#preload',
-//		d: 'M 21.5 57.7 L 29.47 41.06 L 38.22 56.47 L 44.81 37.24 L 52.75 66.85 L 56.92 37.39 L 61.36 58.92 L 76.14 49.98 L 84 55.61',
-//		easing: 'easeInQuad',
-//		duration: 1082,
-//		direction: 'alternate',
-//		loop: true
-//	});
-//	var elapsed = false,
-//		done = false;
-//	setTimeout(function(){
-//		elapsed = true;
-//	},3000);
-//	$(window).on('load',function(){
-//		if(elapsed){
-//			$('body,html').addClass('active');
-//			preloadAnimation.pause();
-//			anime({
-//				targets: '.fancy-bulb',
-//				translateY: [0,-150],
-//				rotate: [-180,-180],
-//				duration: 1500,
-//				delay: 1200,
-//				complete: function(){
-//					$('.g_preloader, .header__logo i').remove();
-//				}
-//			});
-//			anime({
-//				targets: '.header__logo i',
-//				width: 95,
-//				duration: 1000,
-//				delay: 1000,
-//				complete: function(){
-//					$('.g_preloader, .header__logo i').remove();
-//				}
-//			});
-//			setTimeout(function(){
-//				$('.header__logo i').css({'width':'95px'});
-//				done = true;
-//			},1500);
-//		}else{
-//			setTimeout(function(){
-//				$('body,html').addClass('active');
-//				preloadAnimation.pause();
-//				anime({
-//					targets: '.fancy-bulb',
-//					translateY: [0,-150],
-//					rotate: [-180,-180],
-//					duration: 1500,
-//					delay: 1200,
-//					complete: function(){
-//						$('.g_preloader, .header__logo i').remove();
-//					}
-//				});
-//				setTimeout(function(){
-//					$('.header__logo i').css({'width':'95px'});
-//					$('.g_preloader, .header__logo i').remove();
-//				},1500);
-//			},3000);
-//		}
-//	});
+//	$('.g_preloader, .header__logo i').remove();
+	//preloader
+	anime({
+		targets: '.fancy-bulb',
+		translateY: [55,0],
+		rotate: [-180,-180],
+		elasticity: 750,
+		duration: 2515
+	});
+	var preloadAnimation = anime({
+		targets: '#preload',
+		d: 'M 21.5 57.7 L 29.47 41.06 L 38.22 56.47 L 44.81 37.24 L 52.75 66.85 L 56.92 37.39 L 61.36 58.92 L 76.14 49.98 L 84 55.61',
+		easing: 'easeInQuad',
+		duration: 1082,
+		direction: 'alternate',
+		loop: true
+	});
+	var elapsed = false,
+		done = false;
+	setTimeout(function(){
+		elapsed = true;
+	},3000);
+	$(window).on('load',function(){
+		if(elapsed){
+			$('body,html').addClass('active');
+			preloadAnimation.pause();
+			anime({
+				targets: '.fancy-bulb',
+				translateY: [0,-150],
+				rotate: [-180,-180],
+				duration: 1500,
+				delay: 1200,
+				complete: function(){
+					$('.g_preloader, .header__logo i').remove();
+				}
+			});
+			anime({
+				targets: '.header__logo i',
+				width: 95,
+				duration: 1000,
+				delay: 1000,
+				complete: function(){
+					$('.g_preloader, .header__logo i').remove();
+				}
+			});
+			setTimeout(function(){
+				$('.header__logo i').css({'width':'95px'});
+				done = true;
+			},1500);
+		}else{
+			setTimeout(function(){
+				$('body,html').addClass('active');
+				preloadAnimation.pause();
+				anime({
+					targets: '.fancy-bulb',
+					translateY: [0,-150],
+					rotate: [-180,-180],
+					duration: 1500,
+					delay: 1200,
+					complete: function(){
+						$('.g_preloader, .header__logo i').remove();
+					}
+				});
+				setTimeout(function(){
+					$('.header__logo i').css({'width':'95px'});
+					$('.g_preloader, .header__logo i').remove();
+				},1500);
+			},3000);
+		}
+	});
 
 	//fixed nav
 	var header = $('.header'),
