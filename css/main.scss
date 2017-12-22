@@ -706,6 +706,7 @@ section{
 	z-index: 0;
 	user-select: none;
 	margin: -5px;
+	cursor: pointer;
 	padding-top: 1px;
 	span{
 		font-weight: 300;
@@ -1183,6 +1184,10 @@ section{
 		}
 		&:first-of-type{
 			margin-right: 5px;
+		}
+		&.swiper-button-disabled{
+			opacity: .5;
+			pointer-events: none;
 		}
 	}
 }
@@ -1773,6 +1778,7 @@ article.g_txt{
 			font-size: 0.875rem;
 			margin-bottom: 20px;
 			display: block;
+			margin-top: 4px;
 		}
 	}
 	&__info{
@@ -1938,6 +1944,7 @@ article.g_txt{
 }
 .s_slider{
 	padding: 40px 0;
+	overflow: hidden;
 	&__item{
 		@include flex(sb,c);
 		&.swiper-slide-active{
@@ -1963,14 +1970,9 @@ article.g_txt{
 	}
 	&__controls{
 		@include flex(sb,c);
-		.g_arr{
-			>div{
-				&.swiper-button-disabled{
-					opacity: .5;
-					pointer-events: none;
-				}
-			}
-		}
+	}
+	.swiper-container{
+		overflow: visible;
 	}
 }
 .s_should{
@@ -2480,6 +2482,9 @@ article.g_txt{
 			color: $d;
 			font-size: 1.125rem;
 			text-transform: uppercase;
+			&:hover{
+				color: $b;
+			}
 		}
 		hr{
 			border: none;
@@ -2494,11 +2499,22 @@ article.g_txt{
 	}
 	&__col{
 		width: calc(33.333% - 25px);
+		hr{
+			transition: $t;
+		}
 		h3{
 			font-weight: 300;
 			color: $d;
 			font-size: 1.25rem;
 			margin-bottom: 35px;
+		}
+		&:hover{
+			p b{
+				color: $b;
+			}
+			hr{
+				width: 40px;
+			}
 		}
 	}
 }
@@ -2811,6 +2827,10 @@ article.g_txt{
 		padding: 30px 30px 40px;
 		min-height: 100%;
 		@include flex(fs,fs,$d:c);
+		transition: $t;
+		&:hover{
+			box-shadow: inset 0.1rem 0.3rem 1rem -0.1rem rgba(0, 0, 0, 0.13);
+		}
 		&_img{
 			height: 260px;
 			@include flex(c,c);
@@ -3122,6 +3142,17 @@ article.g_txt{
 		width: calc(50% - 40px);
 		@include flex(fs,fs);
 		margin: 25px 0;
+		&:hover{
+			i{
+				background-color: $b;
+				path{
+					fill: #fff;
+				}
+			}
+			h4{
+				color: $b;
+			}
+		}
 		i{
 			min-width: 70px;
 			height: 70px;
@@ -3129,6 +3160,7 @@ article.g_txt{
 			border-radius: 50%;
 			@include flex(c,c);
 			margin-right: 28px;
+			transition: $t;
 		}
 		h4{
 			font-weight: 300;
@@ -3136,6 +3168,7 @@ article.g_txt{
 			font-size: 1.25rem;
 			text-transform: uppercase;
 			margin-bottom: 13px;
+			transition: $t;
 		}
 		p{
 			line-height: 1.5;
@@ -3190,6 +3223,16 @@ article.g_txt{
 .s_service{
 	&__item{
 		padding: 60px 0;
+		&:hover{
+			.s_service{
+				&__icon{
+					background-color: $b !important;
+					path{
+						fill: #fff;
+					}
+				}
+			}
+		}
 		&:nth-of-type(2n){
 			background-color: #fff;
 			.s_service{
@@ -3235,7 +3278,11 @@ article.g_txt{
 		border: 1px solid  $b;
 		@include flex(c,c);
 		position: relative;
+		transition: $t;
 		background-color: $gr;
+		path{
+			transition: $t;
+		}
 		&_line{
 			position: absolute;
 			left: 50%;
@@ -3276,12 +3323,310 @@ article.g_txt{
 	}
 }
 
+//contacts.html
+.s_map{
+	#s_map{
+		height: 630px;
+	}
+	.container{
+		position: relative;
+		z-index: 55;
+		pointer-events: none;
+	}
+	&__block{
+		position: absolute;
+		top: 40px;
+		left: 20px;
+		pointer-events: all;
+		z-index: 5;
+		padding: 40px;
+		background-color: #fff;
+		box-shadow: 0.188rem 0.125rem 0.563rem 0.063rem rgba(119, 119, 119, 0.24);
+		&_tel{
+			font-weight: 500;
+			color: $d;
+			font-size: 1.125rem;
+			display: block;
+			cursor: default;
+			@include h_center($h:2px);
+			span{
+				cursor: pointer;
+			}
+			+small{
+				font-weight: 300;
+				color: #8a8a8a;
+				font-size: 0.875rem;
+				margin-bottom: 20px;
+				display: block;
+				margin-top: 4px;
+			}
+		}
+		&_info{
+			@include flex(fs,c);
+			margin-bottom: 13px;
+			&:hover{
+				path{
+					fill: $b;
+				}
+				span{
+					color: $b;
+				}
+			}
+			i{
+				min-width: 25px;
+				margin-right: 10px;
+			}
+			span{
+				font-weight: 300;
+				color: #8a8a8a;
+				font-size: 0.875rem;
+			}
+		}
+	}
+	&__form{
+		margin-top: 40px;
+		text-align: center;
+		.g_input{
+			margin-bottom: 25px;
+		}
+	}
+}
+.s_team{
+	padding: 50px 0;
+	background-color: #fff;
+	&__head{
+		&_slider{
+			margin-bottom: 30px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		&_arr{
+			min-width: 30px;
+			width: 30px;
+			height: 30px;
+			@include flex(c,c);
+			z-index: 4;
+			position: absolute;
+			cursor: pointer;
+			top: 1px;
+			transition: $t;
+			&.swiper-button-disabled{
+				opacity: 0;
+				transform: scale(.7);
+			}
+			&:after{
+				content: '';
+				position: absolute;
+				border-radius: 50%;
+				background-color: $b;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+				z-index: -1;
+			}
+			&:before{
+				content: '';
+				position: absolute;
+				top: -20px;
+				background-color: #fff;
+				width: calc(100% + 25px);
+				height: calc(100% + 40px);
+				z-index: -2;
+			}
+			&Prev{
+				padding-right: 2px;
+				left: 0;
+				&:before{
+					left: -20px;
+				}
+				&:after{
+					box-shadow: 0.14rem 0.1rem 0.438rem 0.063rem rgba(24, 117, 204, 0.32);
+				}
+			}
+			&Next{
+				right: 0;
+				&:before{
+					right: -20px;
+				}
+				&:after{
+					box-shadow: -0.1rem 0.1rem 1rem 0.063rem rgba(24, 117, 204, 0.32);
+				}
+			}
+		}
+		a{
+			font-weight: 300;
+			color: $d;
+			font-size: 1rem;
+			transition: $t;
+			min-height: 30px;
+			width: auto;
+			span{
+				padding-bottom: 9px;
+				border-bottom: 2px dashed rgba(151, 151, 151, 0.53);
+			}
+			&:not(:last-of-type){
+				margin-right: 50px;
+			}
+			&._current{
+				color: #000;
+				cursor: default;
+				pointer-events: none;
+				font-size: 1.25rem;
+				text-transform: uppercase;
+				span{
+					padding-bottom: 4px;
+					border-bottom: 3px solid  $b;
+				}
+			}
+		}
+	}
+	&__slider{
+		&_wrp{
+		}
+		&_controls{
+			margin-top: 30px;
+			@include flex(fs,c);
+			.g_arr{
+				margin-left: 30px;
+			}
+		}
+	}
+	&__item{
+		&_img{
+			height: 230px;
+			margin-bottom: 15px;
+			border-radius: 1.3rem 1.3rem 0 0;
+		}
+		h4{
+			font-weight: 500;
+			color: $d;
+			font-size: 0.875rem;
+			text-transform: uppercase;
+			margin-bottom: 3px;
+		}
+		p{
+			font-weight: 400;
+			color: $d;
+			font-size: 0.875rem;
+			margin-bottom: 5px;
+		}
+		a{
+			font-weight: 500;
+			color: $d;
+			font-size: 1rem;
+		}
+	}
+}
 
 /* ==========================================================
    _inner
    ========================================================== */
 
 
+.overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	background-color: #919191;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity $t*2, visibility $t*3;
+	pointer-events: none;
+	&._visible{
+		visibility: visible;
+		opacity: 0.5;
+		transform: none;
+		pointer-events: all;
+	}
+}
+.popup{
+	position: absolute;
+	left: 50%;
+	top: 0;
+	z-index: 9999;
+	background-color: #fff;
+	box-shadow: 0.188rem 0.188rem 4.563rem rgba($d, 0.3);
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity $t*2, transform $t*2;
+	padding: 60px 60px 50px;
+	width: 450px;
+	text-align: center;
+	border-radius: 1.3rem;
+	pointer-events: none;
+	max-width: 100%;
+	h2{
+		margin-bottom: 45px;
+	}
+	&_thnx{
+		h2{
+			margin-bottom: 10px;
+			font-size: 2rem;
+		}
+		.g_btn{
+			margin-top: 35px;
+		}
+	}
+	&._visible{
+		visibility: visible;
+		transform: none !important;
+		pointer-events: all;
+		opacity: 1;
+		animation: popup $t*2;
+	}
+	&._back{
+		opacity: 0;
+		transform: scale(0.8) !important;
+	}
+	&__close{
+		font-size: 41px;
+		line-height: 0.6;
+		width: 25px;
+		padding-left: 1px;
+		height: 25px;
+		text-align: center;
+		cursor: pointer;
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		transition: $t;
+		color: #d0d0d0;
+		font-family: 'fix';
+		span{
+			display: inline-block;
+			transition: $t;
+		}
+		&:hover{
+			color:$r;
+			transform: rotate(90deg);
+		}
+	}
+	&__call{
+		text-align: center;
+	}
+	button{
+		width: 100%;
+		margin-top: 45px;
+	}
+	button{
+		background: none;
+		border: none;
+		padding: 0;
+	}
+	.g_input{
+		width: 100%;
+		&:not(:last-of-type){
+			margin-bottom: 40px;
+		}
+		input{
+			width: 100%;
+		}
+	}
+}
 .simplebar-track{
 	z-index: 99999;
 	.simplebar-scrollbar{
@@ -3307,6 +3652,13 @@ article.g_txt{
 			background-color: $d;
 			opacity: 1 !important;
 		}
+	}
+}
+.swiper-scrollbar{
+	height: 6px;
+	width: 100%;
+	&-drag{
+		background-color: $b;
 	}
 }
 
