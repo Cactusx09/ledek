@@ -1,7 +1,8 @@
 $(document).ready(function(){
 	var ww = $(window).outerWidth(),
-		wv = +$(window).outerHeight();
-
+		wv = $(window).outerHeight();
+	var headerContainerOffset = $('.header .container').offset().left;
+	$('.header__logo i').css({'width':'calc(100vw - '+headerContainerOffset*2+'px)'})
 	var pc = false,
 		md = false,
 		mb = false;
@@ -61,6 +62,26 @@ $(document).ready(function(){
 		}());
 	}
 
+	//logo E letter animation
+	var headerLogoImg = $('.header__logo span img').last();
+	anime({
+		targets: headerLogoImg[0],
+		opacity: [
+			{value: 0, delay: function(){return anime.random(100,8500)}},
+			{value: 1},
+			{value: 0, delay: 130},
+			{value: 1, delay: 619},
+			{value: 0, delay:28},
+			{value: 1, delay: function(){return anime.random(100,600)}},
+			{value: 0, delay:200},
+			{value: 1}
+		],
+		duration: 10,
+		loop: true,
+		delay: function(el, i, l) {
+			return anime.random(0,7000);
+		}
+	})
 
 	//fixed nav
 	if(!mb){
@@ -103,9 +124,12 @@ $(document).ready(function(){
 			function canscrol(){
 				var scrollin = scrollContent.scrollTop();
 				if(scrollin < scrollDistance){
-					if(scrollin > scrollDistance - 500){
+					if(scrollin > scrollDistance - 300){
 						supcanbody.style.position = 'fixed';
 						sAnimTxt.addClass('_visible');
+						if(!$('.s_anim__head').hasClass('_hidden')){
+							$('.s_anim__head').addClass('_hidden');
+						}
 					}else{
 						supcanbody.style.position = 'fixed';
 						scalecof = scrollin / (supcanlength) / 2.6;
@@ -115,9 +139,11 @@ $(document).ready(function(){
 							scanimg[i].style.transform = 'translate3d(' + (scanimgs[i - 1][0] * canmat) + '%,' + (scanimgs[i - 1][1] * canmat) + '%,0)';
 						}
 						sAnimTxt.removeClass('_visible');
+						if($('.s_anim__head').hasClass('_hidden')){
+							$('.s_anim__head').removeClass('_hidden');
+						}
 					}
-				}
-				else{
+				}else{
 					supcanbody.style.position = 'absolute';
 				}
 			}
@@ -131,6 +157,7 @@ $(document).ready(function(){
 				if($(this).scrollTop() > 1000){
 					if(!header.hasClass('_fixed')){
 						header.addClass('_fixed');
+						$('.footer__gotop').addClass('_fixed');
 						if(pc){
 							anime.timeline()
 								.add({
@@ -151,6 +178,7 @@ $(document).ready(function(){
 					if(header.hasClass('_fixed') && !headerAnimDone){
 						headerAnimDone = true;
 						if(pc){
+							$('.footer__gotop').removeClass('_fixed');
 							anime.timeline({
 								complete: function(){
 									headerAnimDone = false;
@@ -171,6 +199,7 @@ $(document).ready(function(){
 	}
 
 	////responsive
+
 	//nav hambs
 	$('.header__hamb').click(function(e){
 		if(!mb){
@@ -257,7 +286,7 @@ $(document).ready(function(){
 		var sliderSwiper = new Swiper('.s_slider__slider_wrp',{
 			slidesPerView: 1,
 			autoHeight: true,
-			speed: 500,
+			speed: 1000,
 			loop: true,
 			parallax: true,
 			effect: 'fade',
@@ -276,7 +305,7 @@ $(document).ready(function(){
 			spaceBetween: 60,
 			slidesPerView: 1,
 			loop: true,
-			speed: 650,
+			speed: 1350,
 			autoplay: true,
 			navigation: {
 				nextEl: '.s_solve__arr_next',
@@ -331,7 +360,7 @@ $(document).ready(function(){
 			spaceBetween: 30,
 			slidesPerView: 5,
 			loop: true,
-			speed: 300,
+			speed: 1000,
 			autoplay: true,
 			navigation: {
 				nextEl: '.s_trust__arr_next',
@@ -489,6 +518,7 @@ $(document).ready(function(){
 			initialSlide: initSlide,
 			centeredSlides: true,
 			parallax: true,
+			speed: 1000,
 			navigation: {
 				nextEl: '.s_mount__arr_next',
 				prevEl: '.s_mount__arr_prev',
@@ -608,8 +638,12 @@ $(document).ready(function(){
 				spaceBetween: 70,
 				slidesPerView: 1,
 				autoHeight: true,
+				effect: 'fade',
+				fadeEffect:{
+					crossFade: true
+				},
 				shortSwipes: false,
-				speed: 500,
+				speed: 1000,
 				on:{
 					slideChange: function(){
 						var n = this.realIndex;
@@ -863,16 +897,6 @@ $(document).ready(function(){
 	});
 
 	////gallery
-	if($('.s_should__video').length){
-		$('.s_should__video').lightGallery({
-			selector: '.s_should__video_img'
-		});
-	}
-	if($('.s_reviews__body').length){
-		$('.s_reviews__body').lightGallery({
-			selector: '.s_reviews__item_img'
-		});
-	}
 	if($('.s_docs__slider').length){
 		$('.s_docs__slider').lightGallery({
 			selector: '.s_docs__item',
@@ -884,6 +908,25 @@ $(document).ready(function(){
 			selector: '.s_gallery__item_img'
 		});
 	}
+
+	//video
+	$('.s_should__video').click(function(){
+		var img = $(this),
+			wrp = img.closest('.s_should__right'),
+			frame = wrp.find('iframe'),
+			src = frame.attr('src');
+		frame.attr('src',src + '?autoplay=1');
+		wrp.addClass('_active');
+	});
+	$('.s_reviews__item_img').click(function(e){
+		e.preventDefault();
+		var img = $(this),
+			wrp = img.closest('.s_reviews__item_imgWrap'),
+			frame = wrp.find('iframe'),
+			src = frame.attr('src');
+		frame.attr('src',src + '?autoplay=1');
+		wrp.addClass('_active');
+	});
 
 	//map
 	//contacts.html
@@ -921,17 +964,27 @@ $(document).ready(function(){
 	}
 	function gBtnHover(path,span){
 		anime.remove([path,span]);
-		var gBtnHoverAnimation = anime({
+		var gBtnTimeline = anime.timeline();
+		gBtnTimeline.add({
 			targets: path,
-			d: ['M 12 6.25 C 54.67 3.67 54.67 3.67 110 3.67 C 172.25 3.67 207 6.25 207 6.25 C 210.866 6.25 214 9.384 214 13.25 L 214 26.75 C 213.91 31.75 214 35 214 41.25 C 214 45.116 210.866 48.25 207 48.25 C 173.83 51.83 173.83 51.83 110 51.83 C 39.17 51.83 12 48.25 12 48.25 C 8.134 48.25 5 45.116 5 41.25 C 5 29.33 5.05 31.79 5 26.83 C 5 22.303 5 17.777 5 13.25 C 5 9.384 8.134 6.25 12 6.25 Z','M 12 6.25 C 44.5 6.25 77 6.25 109.5 6.25 C 142 6.25 174.5 6.25 207 6.25 C 210.866 6.25 214 9.384 214 13.25 L 214 27.25 C 213.91 32.25 213.91 32.25 214 41.25 C 214 45.116 210.866 48.25 207 48.25 C 174.5 48.25 142 48.25 109.5 48.25 C 77 48.25 44.5 48.25 12 48.25 C 8.134 48.25 5 45.116 5 41.25 C 5 35 5.05 31.71 5 26.75 C 4.95 21.79 5 18.25 5 13.25 C 5 9.384 8.134 6.25 12 6.25 Z'],
+			d: 'M 12 6.25 C 54.67 3.67 54.67 3.67 110 3.67 C 172.25 3.67 207 6.25 207 6.25 C 210.866 6.25 214 9.384 214 13.25 L 214 26.75 C 213.91 31.75 214 35 214 41.25 C 214 45.116 210.866 48.25 207 48.25 C 173.83 51.83 173.83 51.83 110 51.83 C 39.17 51.83 12 48.25 12 48.25 C 8.134 48.25 5 45.116 5 41.25 C 5 29.33 5.05 31.79 5 26.83 C 5 22.303 5 17.777 5 13.25 C 5 9.384 8.134 6.25 12 6.25 Z',
+			duration: 300
+		}).add({
+			targets: path,
+			d: 'M 12 6.25 C 44.5 6.25 77 6.25 109.5 6.25 C 142 6.25 174.5 6.25 207 6.25 C 210.866 6.25 214 9.384 214 13.25 L 214 27.25 C 213.91 32.25 213.91 32.25 214 41.25 C 214 45.116 210.866 48.25 207 48.25 C 174.5 48.25 142 48.25 109.5 48.25 C 77 48.25 44.5 48.25 12 48.25 C 8.134 48.25 5 45.116 5 41.25 C 5 35 5.05 31.71 5 26.75 C 4.95 21.79 5 18.25 5 13.25 C 5 9.384 8.134 6.25 12 6.25 Z',
 			duration: 2850,
-			elasticity: 870,
-			offset: 0
-		});
-		var gBtnSpanHoverAnimation = anime({
+			elasticity: 821,
+			offset: '-=150'
+		}).add({
 			targets: span,
-			scale: [1.1,1],
-			duration: 1200
+			scale: 1.07,
+			duration: 200,
+			offset: 0
+		}).add({
+			targets: span,
+			scale: 1,
+			duration: 500,
+			offset: 145
 		});
 	}
 
@@ -982,14 +1035,17 @@ $(document).ready(function(){
 	}
 	function gLinkHover(path){
 		anime.remove(path);
-		anime({
+		var gLinkTimeline = anime.timeline();
+		gLinkTimeline.add({
 			targets: path,
-			d: ['M 0 7.5 C 12.16 15.61 12.16 15.61 54.5 7.5 C 101.5 -1.5 101.5 12.5 151.5 11.5 C 203.5 10.5 211.27 -0.26 247.5 7.5 C 264.818 11.066 282.682 11.066 300 7.5',
-			'M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5'],
-			duration: 2825,
-			easing: 'easeOutElastic',
-			elasticity: 842,
-			offset: 0
+			d: 'M 0 7.5 C 12.16 15.61 12.16 15.61 54.5 7.5 C 101.5 -1.5 101.5 12.5 151.5 11.5 C 203.5 10.5 211.27 -0.26 247.5 7.5 C 264.818 11.066 282.682 11.066 300 7.5',
+			duration: 350
+		}).add({
+			targets: path,
+			d: 'M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5',
+			duration: 2811,
+			elasticity: 879,
+			offset: '-=150'
 		});
 	}
 
@@ -1042,10 +1098,6 @@ $(document).ready(function(){
 		});
 	}
 
-	//design.html animation on scroll
-	if($('.s_anim').length){
-
-	}
 });
 
 //gmap init
