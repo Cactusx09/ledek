@@ -1651,6 +1651,7 @@ article.g_txt{
 			top: 0;
 			@include flex(c,c);
 			transition: $t*3;
+			padding-bottom: 3px;
 			img{
 				transform: translateY(10px) translateX(-9px);
 				transition: $t;
@@ -2041,7 +2042,7 @@ article.g_txt{
 		margin-bottom: 40px;
 	}
 	&__body{
-		@include flex(sb,c,$w:w);
+		@include flex(sb,c);
 	}
 	&__txt{
 		max-width: calc(100% - 575px);
@@ -2054,6 +2055,7 @@ article.g_txt{
 		position: relative;
 		overflow: hidden;
 		border-radius: 1.3rem;
+		-webkit-transform: translate3d(0px, 0px, 0px);
 		&._active{
 			.s_should{
 				&__video{
@@ -2069,6 +2071,7 @@ article.g_txt{
 			width: 100%;
 			height: 100%;
 			border-radius: 1.3rem;
+			-webkit-transform: translate3d(0px, 0px, 0px);
 		}
 	}
 	&__video{
@@ -2081,6 +2084,7 @@ article.g_txt{
 		margin-right: auto;
 		transition: $t*3;
 		z-index: 99;
+		-webkit-transform: translate3d(0px, 0px, 0px);
 		&:hover{
 			.s_should__video_img{
 				transform: scale(1.1);
@@ -2219,6 +2223,7 @@ article.g_txt{
 			width: 100%;
 			min-height: 325px;
 			border-radius: 1.3rem;
+			-webkit-transform: translate3d(0px, 0px, 0px);
 		}
 	}
 	&__thumb{
@@ -2263,13 +2268,15 @@ article.g_txt{
 			padding-bottom: 48%;
 			border-radius: 1.3rem;
 			overflow: hidden;
+			-webkit-transform: translate3d(0px, 0px, 0px);
 			position: relative;
 			display: block;
 			margin-bottom: 30px;
 			cursor: pointer;
 			&:hover{
 				span{
-					transform: scale(1.08);
+					transform: scale(1.08) translate3d(0px, 0px, 0px);
+					-webkit-transform: scale(1.08) translate3d(0px, 0px, 0px);
 				}
 			}
 			span{
@@ -2283,6 +2290,7 @@ article.g_txt{
 				background-repeat: no-repeat;
 				display: block;
 				transition: $t;
+				-webkit-transform: translate3d(0px, 0px, 0px);
 				border-radius: 1.3rem;
 			}
 		}
@@ -2363,12 +2371,14 @@ article.g_txt{
 			background-size: cover;
 			z-index: 1;
 			display: block;
+			-webkit-transform: translate3d(0px, 0px, 0px);
 			transition: $t*2;
 			&Wrap{
 				padding-bottom: 56.5%;
 				position: relative;
 				border-radius: 1.3rem;
 				overflow: hidden;
+				-webkit-transform: translate3d(0px, 0px, 0px);
 				&._active{
 					.s_reviews__item_img{
 						opacity: 0;
@@ -2382,10 +2392,12 @@ article.g_txt{
 					width: 100%;
 					height: 100%;
 					border-radius: 1.3rem;
+					-webkit-transform: translate3d(0px, 0px, 0px);
 				}
 				&:hover{
 					.s_reviews__item_img{
-						transform: scale(1.1);
+						transform: scale(1.1) translate3d(0px, 0px, 0px);
+						-webkit-transform: scale(1.1) translate3d(0px, 0px, 0px);
 						i{
 							transform: scale(.8);
 							opacity: .5;
@@ -2661,10 +2673,12 @@ article.g_txt{
 		margin: 10px;
 		overflow: hidden;
 		border-radius: 1.3rem;
+		-webkit-transform: translate3d(0px, 0px, 0px);
 		cursor: pointer;
 		&:hover{
 			.s_gallery__item_img{
-				transform: scale(1.3);
+				transform: scale(1.3) translate3d(0px, 0px, 0px);
+				-webkit-transform: scale(1.3) translate3d(0px, 0px, 0px);
 			}
 		}
 		&_img{
@@ -2677,6 +2691,7 @@ article.g_txt{
 			background-size: cover;
 			background-repeat: no-repeat;
 			transition: $t;
+			-webkit-transform: translate3d(0px, 0px, 0px);
 			border-radius: 1.3rem;
 		}
 	}
@@ -2700,13 +2715,15 @@ article.g_txt{
 			padding-bottom: 57%;
 			border-radius: 1.3rem;
 			overflow: hidden;
+			-webkit-transform: translate3d(0px, 0px, 0px);
 			position: relative;
 			display: block;
 			margin-bottom: 20px;
 			cursor: pointer;
 			&:hover{
 				span{
-					transform: scale(1.08);
+					transform: scale(1.08) translate3d(0px, 0px, 0px);
+					-webkit-transform: scale(1.08) translate3d(0px, 0px, 0px);
 				}
 			}
 			span{
@@ -2721,6 +2738,7 @@ article.g_txt{
 				display: block;
 				transition: $t;
 				border-radius: 1.3rem;
+				-webkit-transform: translate3d(0px, 0px, 0px);
 			}
 		}
 		h3{
@@ -2793,11 +2811,13 @@ article.g_txt{
 			overflow: hidden;
 			position: relative;
 			display: block;
+			-webkit-transform: translate3d(0px, 0px, 0px);
 			margin-bottom: 30px;
 			cursor: pointer;
 			&:hover{
 				span{
-					transform: scale(1.08);
+					transform: scale(1.08) translate3d(0px, 0px, 0px);
+					-webkit-transform: scale(1.08) translate3d(0px, 0px, 0px);
 				}
 			}
 			span{
@@ -2812,6 +2832,7 @@ article.g_txt{
 				display: block;
 				transition: $t;
 				border-radius: 1.3rem;
+				-webkit-transform: translate3d(0px, 0px, 0px);
 			}
 		}
 		h3{
@@ -4799,8 +4820,12 @@ article.g_txt{
 		}
 	}
 	.s_should{
-		&__video{
-			width: 380px;
+		&__right{
+			min-width: 480px;
+		}
+		&__txt{
+			margin-left: 0;
+			max-width: 100%;
 		}
 	}
 	.s_garant{
@@ -5000,10 +5025,14 @@ article.g_txt{
 		&__right{
 			width: 100%;
 			margin-top: 30px;
+			margin-left: 0;
+			max-width: 500px;
+			margin-left: auto;
+			margin-right: auto;
+			min-width: 0;
 		}
 		&__video{
 			width: 100%;
-			margin-left: 0;
 		}
 	}
 	.s_why{

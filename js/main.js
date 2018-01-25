@@ -2,7 +2,14 @@ $(document).ready(function(){
 	var ww = $(window).outerWidth(),
 		wv = $(window).outerHeight();
 	var headerContainerOffset = $('.header .container').offset().left;
-	$('.header__logo i').css({'width':'calc(100vw - '+headerContainerOffset*2+'px)'})
+	$('.header__logo i').css({'width':'calc(100vw - '+headerContainerOffset*2+'px)'});
+
+
+	if(getBrowser().name=="Safari"){
+		$('body,html').css({'line-height':'1.3'});
+		$('.g_btn').css({'padding-top':'.33rem'});
+	}
+
 	var pc = false,
 		md = false,
 		mb = false;
@@ -22,66 +29,64 @@ $(document).ready(function(){
 	if(mb){
 		$('.g_preloader, .header__logo i').remove();
 	}else{
-		(function(){
-			anime({
-				targets: '.fancy-bulb',
-				translateY: [55,0],
-				rotate: [-180,-180],
-				elasticity: 750,
-				duration: 2515
-			});
-			var preloadAnimation = anime({
-				targets: '#preload',
-				d: 'M 21.5 57.7 L 29.47 41.06 L 38.22 56.47 L 44.81 37.24 L 52.75 66.85 L 56.92 37.39 L 61.36 58.92 L 76.14 49.98 L 84 55.61',
-				easing: 'easeInQuad',
-				duration: 1082,
-				direction: 'alternate',
-				loop: true
-			});
-			disableScroll(scrollContent);
-			$(window).on('load',function(){
+		anime({
+			targets: '.fancy-bulb',
+			translateY: [55,0],
+			rotate: [-180,-180],
+			elasticity: 750,
+			duration: 2515
+		});
+		var preloadAnimation = anime({
+			targets: '#preload',
+			d: 'M 21.5 57.7 L 29.47 41.06 L 38.22 56.47 L 44.81 37.24 L 52.75 66.85 L 56.92 37.39 L 61.36 58.92 L 76.14 49.98 L 84 55.61',
+			easing: 'easeInQuad',
+			duration: 1082,
+			direction: 'alternate',
+			loop: true
+		});
+		disableScroll(scrollContent);
+		$(window).on('load',function(){
+			setTimeout(function(){
+				$('body,html').addClass('active');
+				preloadAnimation.pause();
+				anime({
+					targets: '.fancy-bulb',
+					translateY: [0,-150],
+					rotate: [-180,-180],
+					duration: 1500,
+					delay: 1200
+				});
 				setTimeout(function(){
-					$('body,html').addClass('active');
-					preloadAnimation.pause();
+					$('.header__logo i').css({'width':'95px'});
+					enableScroll(scrollContent);
+					//logo E letter animation
+					var headerLogoImg = $('.header__logo span img').last();
 					anime({
-						targets: '.fancy-bulb',
-						translateY: [0,-150],
-						rotate: [-180,-180],
-						duration: 1500,
-						delay: 1200
+						targets: headerLogoImg[0],
+						opacity: [
+							{value: 0, delay: function(){return anime.random(100,8500)}},
+							{value: 1},
+							{value: 0, delay: 130},
+							{value: 1, delay: 619},
+							{value: 0, delay:28},
+							{value: 1, delay: function(){return anime.random(100,600)}},
+							{value: 0, delay:200},
+							{value: 1}
+						],
+						duration: 10,
+						loop: true,
+						delay: function(el, i, l) {
+							return anime.random(0,7000);
+						}
 					});
-					setTimeout(function(){
-						$('.header__logo i').css({'width':'95px'});
-						enableScroll(scrollContent);
-					},1500);
-					setTimeout(function(){
-						$('.g_preloader, .header__logo i').remove();
-					},2300);
 				},1500);
-			});
-		}());
+				setTimeout(function(){
+					$('.g_preloader, .header__logo i').remove();
+				},2300);
+			},1500);
+		});
 	}
 
-	//logo E letter animation
-	var headerLogoImg = $('.header__logo span img').last();
-	anime({
-		targets: headerLogoImg[0],
-		opacity: [
-			{value: 0, delay: function(){return anime.random(100,8500)}},
-			{value: 1},
-			{value: 0, delay: 130},
-			{value: 1, delay: 619},
-			{value: 0, delay:28},
-			{value: 1, delay: function(){return anime.random(100,600)}},
-			{value: 0, delay:200},
-			{value: 1}
-		],
-		duration: 10,
-		loop: true,
-		delay: function(el, i, l) {
-			return anime.random(0,7000);
-		}
-	})
 
 	//fixed nav
 	if(!mb){
@@ -159,18 +164,23 @@ $(document).ready(function(){
 						header.addClass('_fixed');
 						$('.footer__gotop').addClass('_fixed');
 						if(pc){
-							anime.timeline()
-								.add({
-								targets: '.header__animation_path',
-								d: ['M -0.5 0.5 L -0.5 37.5 C 435.5 50.5 435.5 50.5 960.5 50.5 C 1413.5 50.5 1921.5 37.5 1921.5 37.5 L 1919.5 0.5','M -0.5 0.5 L -0.5 42.5 C 319.75 42.5 640 42.5 960.25 42.5 C 1280.5 42.5 1600.75 42.5 1921 42.5 L 1919.5 0.5'],
-								duration: 2850,
-								elasticity: 860
-							})
-								.add({
+							anime.remove(header[0]);
+							anime.timeline().add({
 								targets: header[0],
 								translateY: ['-105%','0%'],
-								duration: 550,
+								duration: 1550,
 								offset: 0
+							}).add({
+								targets: '.header__animation_path',
+								d: ['M -0.5 0.5 L -0.5 37.5 C 435.5 50.5 435.5 50.5 960.5 50.5 C 1413.5 50.5 1921.5 37.5 1921.5 37.5 L 1919.5 0.5'],
+								duration: 350,
+								offset: '-=1450'
+							}).add({
+								targets: '.header__animation_path',
+								d: ['M -0.5 0.5 L -0.5 42.5 C 319.75 42.5 640 42.5 960.25 42.5 C 1280.5 42.5 1600.75 42.5 1921 42.5 L 1919.5 0.5'],
+								duration: 650,
+								elasticity: 360,
+								offset: '-=1150'
 							});
 						}
 					}
@@ -179,18 +189,21 @@ $(document).ready(function(){
 						headerAnimDone = true;
 						if(pc){
 							$('.footer__gotop').removeClass('_fixed');
-							anime.timeline({
-								complete: function(){
-									headerAnimDone = false;
-									header.removeClass('_fixed').css({
-										'transform': 'none'
-									});
-								}
-							}).add({
+							anime.remove(header[0]);
+							anime.timeline().add({
 								targets: header[0],
 								translateY: '-105%',
 								duration: 300
+							}).add({
+								targets: header[0],
+								translateY: '0',
+								duration: 0,
+								offset: 400
 							});
+							setTimeout(function(){
+								headerAnimDone = false;
+								header.removeClass('_fixed');
+							},400);
 						}
 					}
 				}
@@ -330,6 +343,7 @@ $(document).ready(function(){
 					spaceBetween: 30,
 					slidesPerView: 1,
 					autoHeight: false,
+					speed: 750,
 					nested: true,
 					breakpoints:{
 						777:{
@@ -1159,6 +1173,23 @@ function getMobileOperatingSystem() {
 	}
 
 	return null;
+}
+function getBrowser() {
+	var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+	if(/trident/i.test(M[1])){
+		tem=/\brv[ :]+(\d+)/g.exec(ua) || [];
+		return {name:'IE',version:(tem[1]||'')};
+	}
+	if(M[1]==='Chrome'){
+		tem=ua.match(/\bOPR|Edge\/(\d+)/)
+		if(tem!=null)   {return {name:'Opera', version:tem[1]};}
+	}
+	M=M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+	if((tem=ua.match(/version\/(\d+)/i))!=null) {M.splice(1,1,tem[1]);}
+	return {
+		name: M[0],
+		version: M[1]
+	};
 }
 
 if (getMobileOperatingSystem()) {
