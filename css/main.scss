@@ -1727,6 +1727,14 @@ article.g_txt{
 		z-index: 5;
 		@include flex(c,c);
 		overflow: hidden;
+		opacity: 0;
+		transition: $t;
+		visibility: hidden;
+		&._active{
+			clip-path: none;
+			opacity: 1;
+			visibility: visible;
+		}
 		&_body{
 			@include flex(fs,c);
 		}
@@ -3346,6 +3354,9 @@ article.g_txt{
 			color: $d;
 			font-size: 1rem;
 		}
+		.g_tabs__item .g_txt table{
+			min-width: 0;
+		}
 	}
 }
 .s_catTarget{
@@ -3950,7 +3961,7 @@ article.g_txt{
 	&__body{
 		position: absolute;
 		left: 0;
-		bottom: 9vh;
+		bottom: 5vh;
 		width: 100%;
 		padding-top: 60%;
 		margin-top: 70px;
@@ -4086,7 +4097,8 @@ article.g_txt{
 		position: fixed;
 		z-index: 999;
 		left: 0;
-		top: 50px;
+		top: 30px;
+		width: 100%;
 		transition: $t*2;
 		&._hidden{
 			transform: translateY(-100%);
@@ -4765,6 +4777,16 @@ article.g_txt{
 			@include flex(c,c,$d:c);
 			padding: 15vh 5vw;
 			clip-path: url(#nav_circle);
+			pointer-events: none;
+			opacity: 0;
+			visibility: hidden;
+			transition: $t;
+			&._active{
+				opacity: 1;
+				visibility: visible;
+				clip-path: none;
+				pointer-events: all;
+			}
 			a{
 				display: block;
 				text-align: center;
@@ -5457,10 +5479,6 @@ article.g_txt{
 			opacity: 0;
 			visibility: hidden;
 			transition: $t;
-			&._active{
-				opacity: 1;
-				visibility: visible;
-			}
 			&_btn{
 				order: 4;
 			}
@@ -5964,6 +5982,12 @@ article.g_txt{
 				height: 40px;
 				margin-right: 20px;
 			}
+			.g_txt table{
+				td{
+					padding-left: 15px;
+					padding-right: 15px;
+				}
+			}
 		}
 	}
 }
@@ -6322,6 +6346,8 @@ article.g_txt{
 			flex-direction: column;
 			a{
 				font-size: 1.35rem;
+				margin-left: auto !important;
+				margin-right: auto !important;
 				&:not(:last-of-type){
 					margin-right: 0;
 				}
@@ -6734,6 +6760,18 @@ article.g_txt{
 /* ==========================================================
    _other
    ========================================================== */
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.g_preloader .fancy-bulb,.header__logo i{
+		display: none;
+	}
+	.g_preloader{
+		background-image: url('http://www.mytreedb.com/uploads/mytreedb/loader/ajax_loader_gray_512.gif');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 40px;
+	}
+}
 
 /* Change autocomplete styles in WebKit */
 input:-webkit-autofill,
