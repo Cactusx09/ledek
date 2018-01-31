@@ -4284,6 +4284,8 @@ article.g_txt{
 			//			float: left;
 			max-width: 100%;
 			max-height: 100%;
+			height: auto !important;
+			width: auto !important;
 		}
 		#svgmask, #svgmask2 {
 			height: 100% !important;
