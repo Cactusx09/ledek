@@ -5329,6 +5329,9 @@ article.g_txt{
 		background-color: #fff;
 		height: auto;
 		text-align: center;
+		&__head{
+			position: static;
+		}
 		&__body{
 			display: none;
 		}
