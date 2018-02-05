@@ -325,6 +325,10 @@ $(document).ready(function(){
 					slideToClickedSlide: true,
 					autoHeight: false,
 					nested: true,
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
 					breakpoints:{
 						777:{
 							spaceBetween: 10
@@ -870,6 +874,19 @@ $(document).ready(function(){
 		},400);
 	});
 
+	//img zoom
+	if($('.s_catalMain__img_item').length){
+		var width = $('.s_catalMain__right').outerWidth();
+		$(".s_catalMain__img_item").elevateZoom({
+			easing: true,
+			zoomWindowFadeIn: 300,
+			zoomWindowFadeOut: 200,
+			borderSize: 2,
+			zoomWindowOffetx: 10
+		});
+	}
+
+
 	////gallery
 	if($('.s_docs__slider').length){
 		$('.s_docs__slider').lightGallery({
@@ -949,17 +966,18 @@ $(document).ready(function(){
 			duration: 2850,
 			elasticity: 821,
 			offset: '-=150'
-		}).add({
-			targets: span,
-			scale: 1.07,
-			duration: 200,
-			offset: 0
-		}).add({
-			targets: span,
-			scale: 1,
-			duration: 500,
-			offset: 145
 		});
+//			.add({
+//			targets: span,
+//			scale: 1.04,
+//			duration: 400,
+//			offset: 0
+//		}).add({
+//			targets: span,
+//			scale: 1,
+//			duration: 500,
+//			offset: 145
+//		});
 	}
 
 	//arrows
@@ -1013,13 +1031,13 @@ $(document).ready(function(){
 		gLinkTimeline.add({
 			targets: path,
 			d: 'M 0 7.5 C 12.16 15.61 12.16 15.61 54.5 7.5 C 101.5 -1.5 101.5 12.5 151.5 11.5 C 203.5 10.5 211.27 -0.26 247.5 7.5 C 264.818 11.066 282.682 11.066 300 7.5',
-			duration: 350
+			duration: 600
 		}).add({
 			targets: path,
 			d: 'M 0 7.5 C 25 7.5 50 7.5 75 7.5 C 100 7.5 125 7.5 150 7.5 C 175 7.5 200 7.5 225 7.5 C 250 7.5 275 7.5 300 7.5',
-			duration: 2811,
+			duration: 4511,
 			elasticity: 879,
-			offset: '-=150'
+			offset: '-=350'
 		});
 	}
 
@@ -1247,19 +1265,13 @@ function yourFunction(){
 			anime({
 				targets: headerLogoImg[0],
 				opacity: [
-					{value: 0, delay: function(){return anime.random(100,8500)}},
-					{value: 1},
-					{value: 0, delay: 130},
-					{value: 1, delay: 619},
-					{value: 0, delay:28},
-					{value: 1, delay: function(){return anime.random(100,600)}},
-					{value: 0, delay:200},
-					{value: 1}
+					{value: 1, delay: 6500},
+					{value: 0, duration: 3000}
 				],
-				duration: 10,
+				duration: 4000,
 				loop: true,
 				delay: function(el, i, l) {
-					return anime.random(0,7000);
+					return anime.random(2500,10000);
 				}
 			});
 		},1500);
