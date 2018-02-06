@@ -933,8 +933,6 @@ $(document).ready(function(){
 			span = gBtn.find('span');
 		gBtn.on('click',function(){
 			gBtnClick(path[0],span[0]);
-		}).on('mouseenter',function(){
-			gBtnHover(path[0],span[0]);
 		});
 	});
 	function gBtnClick(path,span){

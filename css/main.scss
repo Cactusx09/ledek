@@ -4138,8 +4138,15 @@ article.g_txt{
 			position: absolute;
 			text-align: center;
 			max-width: 250px;
-			cursor: pointer;
 			pointer-events: all;
+			&:hover{
+				&:before,&:after{
+					background-color: $g !important;
+				}
+				p{
+					text-shadow: 1px 0px 0px $g;
+				}
+			}
 			&._lineBot{
 				&:before{
 					content: '';
@@ -4151,6 +4158,7 @@ article.g_txt{
 					background-color: rgba(194, 194, 202, 0.6);
 					position: absolute;
 					margin-top: 10px;
+					transition: $t;
 				}
 				&:after{
 					content: '';
@@ -4163,8 +4171,10 @@ article.g_txt{
 					margin-left: -9px;
 					border-radius: 50%;
 					background-color: #fff;
+					transition: $t;
 					box-shadow: inset 0 0 0 5px $b,
 								0 0 0 5px transparent;
+					animation: scale $t*2 alternate infinite;
 				}
 			}
 			&._lineTop{
@@ -4178,6 +4188,7 @@ article.g_txt{
 					background-color: rgba(194, 194, 202, 0.6);
 					position: absolute;
 					margin-bottom: 10px;
+					transition: $t;
 				}
 				&:after{
 					content: '';
@@ -4190,14 +4201,17 @@ article.g_txt{
 					margin-left: -9px;
 					border-radius: 50%;
 					background-color: #fff;
+					transition: $t;
 					box-shadow: inset 0 0 0 5px $b,
 						0 0 0 5px transparent;
+					animation: scale $t*3 alternate infinite;
 				}
 			}
 			p{
 				color: #373737;
 				font-size: 0.75rem;
 				text-transform: uppercase;
+				transition: $t;
 			}
 			small{
 				font-weight: 300;
@@ -6781,6 +6795,12 @@ article.g_txt{
 /* ==========================================================
    _other
    ========================================================== */
+
+
+@keyframes scale {
+	from { transform: scale(1)}
+	to { transform: scale(1.3)}
+}
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 	.g_preloader .fancy-bulb,.header__logo i{
